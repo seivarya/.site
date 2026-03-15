@@ -1,13 +1,123 @@
 ---
 import Home from "../layouts/Home.astro";
 import Clock from "../components/Clock.astro";
+import Footer from "../components/Footer.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Home>
-    <div class="top-section">
-        <img src="/self.png" width="70" height="70" />
-        <p>hey it's seivarya / sivank, i am a backend dev (i think)</p>
+    <div class="main-container">
+        <header class="top-bar">
+            <span class="est">EST. 2005</span>
+            <div class="clock-display">
+                <img
+                    src="/src/assets/clock.svg"
+                    alt="clock"
+                    width="20"
+                    height="20"
+                />
+                <Clock />
+            </div>
+        </header>
+
+        <section class="profile-section">
+            <div class="avatar-wrapper">
+                <img
+                    class="self-img"
+                    src="/self.png"
+                    width="90"
+                    height="90"
+                    alt="avatar"
+                />
+            </div>
+
+            <div class="name-container">
+                <h1 class="name">seivarya/sivank</h1>
+            </div>
+
+            <p class="role">systems developer</p>
+        </section>
+
+        <div class="intro-section">
+            <p>
+                hey it's seivarya / sivank, i am a systems developer (i think)
+            </p>
+        </div>
+
+        <Footer />
     </div>
 </Home>
+
+<style>
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        width: 70vw;
+        max-width: 700px;
+        color: #7b8496;
+        padding: 40px 0;
+    }
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: 1.5px;
+        margin-bottom: 60px;
+        font-size: 0.95rem;
+    }
+    .est {
+        color: #7b8496;
+    }
+    .clock-display {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #7b8496;
+    }
+    .clock-display img {
+        opacity: 0.8;
+    }
+    .profile-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .avatar-wrapper {
+        position: relative;
+        width: max-content;
+        margin-bottom: 10px;
+    }
+    .self-img {
+        border-radius: 20px;
+        object-fit: cover;
+    }
+    .name-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .name {
+        margin: 0;
+        font-weight: 200;
+        font-size: 1.5rem;
+        color: #e5e9f0;
+        letter-spacing: 0.5px;
+    }
+    .role {
+        margin: 0;
+        color: #7b8496;
+        text-decoration: underline;
+        font-weight: 400;
+        font-size: 1.1rem;
+    }
+    .intro-section {
+        margin-top: 30px;
+        line-height: 1.7;
+        color: #a0a8ba;
+    }
+    .intro-section p {
+        margin: 0;
+    }
+</style>
