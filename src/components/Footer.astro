@@ -5,18 +5,20 @@
 <footer class="site-footer">
     <div class="footer-links">
         <span
-            >built with <a href="https://astro.build/" target="_blank">astro</a
+            ><a href="https://astro.build/" target="_blank">built with astro</a
             ></span
         >
-        <span class="dot">•</span>
+        <span class="dot">-</span>
         <a href="/rss.xml">rss</a>
-        <span class="dot">•</span>
+        <span class="dot">-</span>
         <a href="/sitemap-index.xml">sitemap</a>
     </div>
 
     <div class="copyright">
-        &copy; <span id="year_section">2026</span>
-        <a href="https://github.com/seivarya" target="_blank">seivarya</a>
+        <a href="https://github.com/seivarya" target="_blank">
+            &copy; <span id="year_section">2026</span>
+            seivarya</a
+        >
     </div>
 
     <div class="footer-bottom">
@@ -29,12 +31,11 @@
             </span>
         </div>
         <div class="theme-toggle">
-            <span class="cursor">|</span><span class="muted">light</span> / <strong
-                >dark</strong
-            >
+            <span><a href="https://github.com/seivarya/">source code</a></span>
         </div>
     </div>
 </footer>
+
 <script>
     const year_section = document.getElementById("year_section");
     if (year_section) {
@@ -141,31 +142,5 @@
         display: flex;
         align-items: center;
         color: #7b8496;
-    }
-
-    .cursor {
-        animation: cursor-blink 1s step-end infinite;
-        margin-right: 4px;
-        color: #7b8496;
-        font-weight: 300;
-    }
-
-    @keyframes cursor-blink {
-        0%,
-        100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-    }
-
-    .muted {
-        color: #5d6575;
-    }
-
-    strong {
-        color: #e5e9f0;
-        font-weight: bold;
     }
 </style>

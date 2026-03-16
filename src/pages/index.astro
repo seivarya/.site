@@ -2,6 +2,7 @@
 import Home from "../layouts/Home.astro";
 import Clock from "../components/Clock.astro";
 import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -36,13 +37,14 @@ import Footer from "../components/Footer.astro";
                 <h1 class="name">seivarya/sivank</h1>
             </div>
 
-            <p class="role">systems developer</p>
+            <a class="role" href="#">systems developer</a>
         </section>
 
         <div class="intro-section">
             <p>
                 hey it's seivarya / sivank, i am a systems developer (i think)
             </p>
+            <Navigation />
         </div>
 
         <Footer />
@@ -106,10 +108,11 @@ import Footer from "../components/Footer.astro";
         letter-spacing: 0.5px;
     }
     .role {
-        margin: 0;
+        width: fit-content;
+        text-decoration: none;
+        border-bottom: 1px solid #4b5263;
         color: #7b8496;
-        text-decoration: underline;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 1.1rem;
     }
     .intro-section {
