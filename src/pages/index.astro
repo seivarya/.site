@@ -10,14 +10,16 @@ import Navigation from "../components/Navigation.astro";
 <Home>
     <div class="main-container">
         <header class="top-bar">
-            <span class="est">EST. 2005</span>
+            <span class="est-badge">EST. 2005</span>
             <div class="clock-display">
-                <img
-                    src="/src/assets/clock.svg"
-                    alt="clock"
-                    width="20"
-                    height="20"
-                />
+                <a href="#">
+                    <img
+                        src="/src/assets/clock.svg"
+                        alt="clock"
+                        width="20"
+                        height="20"
+                    /></a
+                >
                 <Clock />
             </div>
         </header>
@@ -25,7 +27,7 @@ import Navigation from "../components/Navigation.astro";
         <section class="profile-section">
             <div class="avatar-wrapper">
                 <img
-                    class="self-img"
+                    class="avatar-image"
                     src="/self.png"
                     width="90"
                     height="90"
@@ -34,16 +36,19 @@ import Navigation from "../components/Navigation.astro";
             </div>
 
             <div class="name-container">
-                <h1 class="name">seivarya/sivank</h1>
+                <h1 class="author-name">
+                    <a class="author-name" href="#">seivarya/sivank</a>
+                </h1>
             </div>
 
-            <a class="role" href="#">systems developer</a>
+            <a class="author-role" href="#">backend developer</a>
         </section>
 
         <div class="intro-section">
             <p>
-                hey it's seivarya / sivank, i am a systems developer (i think)
-            </p>
+                hey it's seivarya / sivank, i am a backend developer (i think)
+                currently working with some low level stuff.
+            </p><br /><br />
             <Navigation />
         </div>
 
@@ -69,7 +74,7 @@ import Navigation from "../components/Navigation.astro";
         margin-bottom: 60px;
         font-size: 0.95rem;
     }
-    .est {
+    .est-badge {
         color: #7b8496;
     }
     .clock-display {
@@ -89,10 +94,10 @@ import Navigation from "../components/Navigation.astro";
     .avatar-wrapper {
         position: relative;
         width: max-content;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
-    .self-img {
-        border-radius: 20px;
+    .avatar-image {
+        border-radius: 10px;
         object-fit: cover;
     }
     .name-container {
@@ -100,14 +105,15 @@ import Navigation from "../components/Navigation.astro";
         align-items: center;
         gap: 10px;
     }
-    .name {
+    .author-name {
         margin: 0;
-        font-weight: 200;
+        font-weight: bold;
+        text-decoration: none;
         font-size: 1.5rem;
         color: #e5e9f0;
         letter-spacing: 0.5px;
     }
-    .role {
+    .author-role {
         width: fit-content;
         text-decoration: none;
         border-bottom: 1px solid #4b5263;

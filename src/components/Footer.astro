@@ -16,9 +16,8 @@
 
     <div class="copyright">
         <a href="https://github.com/seivarya" target="_blank">
-            &copy; <span id="year_section">2026</span>
-            seivarya</a
-        >
+            &copy; <span id="current-year"></span>
+            seivarya</a>
     </div>
 
     <div class="footer-bottom">
@@ -37,9 +36,9 @@
 </footer>
 
 <script>
-    const year_section = document.getElementById("year_section");
-    if (year_section) {
-        year_section.textContent = String(new Date().getFullYear());
+    const currentYearElement = document.getElementById("current-year");
+    if (currentYearElement) {
+        currentYearElement.textContent = String(new Date().getFullYear());
     }
 </script>
 

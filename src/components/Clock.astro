@@ -1,35 +1,36 @@
-<div id="clock_wrapper">
-    <span id="clock_component_span">--:--:--</span>
-    <span class="gmt">GMT+5:30</span>
+<div id="clock-wrapper">
+    <span id="current-time">--:--:--</span>
+    <span class="gmt">| GMT+5:30</span>
 </div>
 
 <style>
-    #clock_wrapper {
+    #clock-wrapper {
         display: flex;
         align-items: center;
         gap: 6px;
         color: #7b8496;
         font-family: inherit;
     }
-</style><script>
-    function time() {
-        var date = new Date();
-        var second = date.getSeconds();
-        var minutes = date.getMinutes();
-        var hours = date.getHours();
+</style>
+<script>
+    function updateClock() {
+        const now = new Date();
+        const seconds = now.getSeconds();
+        const minutes = now.getMinutes();
+        const hours = now.getHours();
 
-        var span = document.getElementById("clock_component_span");
-        if (!span) {
-            console.log("span error");
+        const timeDisplay = document.getElementById("current-time");
+        if (!timeDisplay) {
+            console.log("Clock display element not found");
             return;
         }
 
-        span.textContent =
+        timeDisplay.textContent =
             ("0" + hours).slice(-2) +
             ":" +
             ("0" + minutes).slice(-2) +
             ":" +
-            ("0" + second).slice(-2);
+            ("0" + seconds).slice(-2);
     }
-    setInterval(time, 1000);
+    setInterval(updateClock, 1000);
 </script>
