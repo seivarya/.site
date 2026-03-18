@@ -14,20 +14,44 @@ import Socials from "../components/socials.astro";
 
 		<a class="author-role" href="#">backend developer</a>
 	</section>
-
+	<section class="mid-section">
 	<div class="intro-section">
 		<p>
 			"_very shitty intro i should write a better one_"<br>
 			hey it's seivarya / sivank, i am a backend developer (i think)
 			currently working with some low level stuff. while also working freelance in web developement 
-			in my free time, you'll usually find me writing notes, drawing arts (rarely), or playing chess.
-		</p><br /><br />
+			in my free time, you'll usually find me writing notes, drawing arts (rarely), or playing chess. i'm currently working with:
+		</p><br />
 	</div>
+	
+	<div class="tech-stack-section">
+		
+	<span>c</span> · <span>python</span> · <span>node.js</span> · <span>git</span> · <span>sqlite</span> · <span>lua</span><br /><br /><br />
+
+
+
+	</section> 
 	<Socials/>
 	<Footer />
 </Home>
 
 <style>
+.mid-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.tech-stack {
+	margin-top: 5px;
+	font-size: 1.9rem;
+	color: #6b7280;
+}
+.tech-stack span {
+	color: #9aa3b2;
+	font-size: 1.9rem;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
 .profile-section {
 	display: flex;
 	flex-direction: column;
@@ -55,10 +79,11 @@ import Socials from "../components/socials.astro";
 	font-size: 1.1rem;
 }
 .intro-section {
-	margin-top: 30px;
+	margin-top: 20px;
 	line-height: 1.7;
 	color: #a0a8ba;
 	width: 100%;
+	margin-bottom: 0px;
 }
 .intro-section p {
 	margin: 0;
