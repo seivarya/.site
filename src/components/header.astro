@@ -1,5 +1,6 @@
 ---
 import Clock from "./clock.astro";
+import Navigation from "./navigation.astro";
 ---
 
 <header class="top-bar">
@@ -14,6 +15,7 @@ import Clock from "./clock.astro";
 
 <div class="avatar-wrapper">
 	<img class="avatar-image" src="/self.png" width="90" height="90" alt="avatar" />
+	<Navigation/>
 </div>
 
 <style>
@@ -39,7 +41,9 @@ import Clock from "./clock.astro";
 	opacity: 0.8;
 }
 .avatar-wrapper {
-	position: relative;
+	display: flex;
+	gap: 50px;
+	flex-direction: row;
 	width: 100%;
 	margin-bottom: 40px;
 }
