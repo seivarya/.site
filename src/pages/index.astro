@@ -1,132 +1,65 @@
 ---
 import Home from "../layouts/home.astro";
-import Clock from "../components/clock.astro";
 import Footer from "../components/footer.astro";
-import Navigation from "../components/navigation.astro";
 ---
 
 <Home>
-    <div class="main-container">
-        <header class="top-bar">
-            <span class="est-badge">EST. 2005</span>
-            <div class="clock-display">
-                <a href="#">
-                    <img
-                        src="/src/assets/clock.svg"
-                        alt="clock"
-                        width="20"
-                        height="20"
-                    /></a
-                >
-                <Clock />
-            </div>
-        </header>
+	<section class="profile-section">
+		<div class="name-container">
+			<h1 class="author-name">
+				<a class="author-name" href="#">seivarya</a>
+			</h1>
+		</div>
 
-        <section class="profile-section">
-            <div class="avatar-wrapper">
-                <img
-                    class="avatar-image"
-                    src="/self.png"
-                    width="90"
-                    height="90"
-                    alt="avatar"
-                />
-            </div>
+		<a class="author-role" href="#">backend developer</a>
+	</section>
 
-            <div class="name-container">
-                <h1 class="author-name">
-                    <a class="author-name" href="#">seivarya</a>
-                </h1>
-            </div>
+	<div class="intro-section">
+		<p>
+			"_very shitty intro i should write a better one_"<br>
+			hey it's seivarya / sivank, i am a backend developer (i think)
+			currently working with some low level stuff. while also working freelance in web developement 
+			in my free time, you'll usually find me writing notes, drawing arts (rarely), or playing chess.
+		</p><br /><br />
+	</div>
 
-            <a class="author-role" href="#">backend developer</a>
-        </section>
-
-        <div class="intro-section">
-			<p>
-				"_very shitty intro i should write a better one_"<br>
-                hey it's seivarya / sivank, i am a backend developer (i think)
-				currently working with some low level stuff. while also working freelance in web developement 
-				in my free time, you'll usually find me writing notes, drawing arts (rarely), or playing chess.
-            </p><br /><br />
-            <Navigation />
-        </div>
-
-        <Footer />
-    </div>
+	<Footer />
 </Home>
 
 <style>
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        min-height: 80vh;
-        width: 70vw;
-        max-width: 700px;
-        color: #7b8496;
-        padding: 40px 0;
-    }
-    .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        letter-spacing: 1.5px;
-        margin-bottom: 60px;
-        font-size: 0.95rem;
-    }
-    .est-badge {
-        color: #7b8496;
-    }
-    .clock-display {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #7b8496;
-    }
-    .clock-display img {
-        opacity: 0.8;
-    }
-    .profile-section {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .avatar-wrapper {
-        position: relative;
-        width: max-content;
-        margin-bottom: 20px;
-    }
-    .avatar-image {
-        border-radius: 10px;
-        object-fit: cover;
-    }
-    .name-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .author-name {
-        margin: 0;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 1.5rem;
-        color: #e5e9f0;
-        letter-spacing: 0.5px;
-    }
-    .author-role {
-        width: fit-content;
-        text-decoration: none;
-        border-bottom: 1px solid #4b5263;
-        color: #7b8496;
-        font-weight: 300;
-        font-size: 1.1rem;
-    }
-    .intro-section {
-        margin-top: 30px;
-        line-height: 1.7;
-        color: #a0a8ba;
-    }
-    .intro-section p {
-        margin: 0;
-    }
+.profile-section {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.name-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.author-name {
+	margin: 0;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: #e5e9f0;
+	letter-spacing: 0.5px;
+}
+.author-role {
+	width: fit-content;
+	text-decoration: none;
+	border-bottom: 1px solid #4b5263;
+	color: #7b8496;
+	font-weight: 300;
+	font-size: 1.1rem;
+}
+.intro-section {
+	margin-top: 30px;
+	line-height: 1.7;
+	color: #a0a8ba;
+	width: 100%;
+}
+.intro-section p {
+	margin: 0;
+}
 </style>

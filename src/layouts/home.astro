@@ -1,3 +1,8 @@
+---
+import Header from "../components/header.astro";
+import Navigation from "../components/navigation.astro";
+---
+
 <!doctype html>
 <html>
 	<head>
@@ -6,14 +11,17 @@
 	</head>
 
 	<body>
-		<slot />
+		<div class="main-container">
+			<Header />
+			<Navigation />
+			<slot />
+		</div>
 	</body>
 </html>
 
 <style>
-
 @font-face {
-	/* TODO: decide on one font-family also this goes into global.css */
+	/* TODO: decide on one font-family */
 	font-family: SauceCodeProNFM;
 	src: url("../assets/fonts/SauceCodeProNFM.ttf");
 	font-family: OpenSans;
@@ -28,5 +36,15 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-family: "SauceCodeProNFM";
+}
+.main-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 80vh;
+	width: 70vw;
+	max-width: 700px;
+	color: #7b8496;
+	padding: 40px 0;
+	margin: 0 auto;
 }
 </style>
