@@ -8,11 +8,11 @@ import Socials from "../components/socials.astro";
 	<section class="profile-section">
 		<div class="name-container">
 			<h1 class="author-name">
-				<a class="author-name" href="#">seivarya</a>
+				<a class="author-name" href="/">seivarya</a>
 			</h1>
 		</div>
 
-		<a class="author-role" href="#">backend developer</a>
+		<a class="author-role" href="/">backend developer</a>
 	</section>
 	<section class="mid-section">
 		<div class="intro-section">
@@ -24,9 +24,9 @@ import Socials from "../components/socials.astro";
 		</div>
 
 		<div class="tech-stack-section">
-
 			<span>c</span> · <span>python</span> · <span>node.js</span> · <span>git</span> · <span>neovim</span> · <span>arch</span> · <span>postgres</span><br /><br /><br />
 		</div>
+
 		<div class="end-section">
 			If you want to work together, or have some feedback regarding any of my projects, 
 			shoot me a mail at 
@@ -45,26 +45,32 @@ import Socials from "../components/socials.astro";
 a {
 	color: unset;
 }
+.end-section a {
+	color: var(--color-text-muted);
+	text-decoration: none;
+	border-bottom: 1px solid var(--color-border);
+	transition: color 0.2s, border-color 0.2s;
+	padding-bottom: 2px;
+}
+.end-section a:hover {
+	color: var(--color-text-hover);
+	border-bottom-color: var(--color-text-hover);
+}
 .mid-section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
-.tech-stack {
-	margin-top: 3px;
-	font-size: 1.9rem;
-	text-align: left;
-	color: #6b7280;
-}
-.tech-stack span {
-	color: #9aa3b2;
-	font-size: 1.9rem;
-	border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
-}
+
 .tech-stack-section {
+	color: var(--color-text-muted);
 	margin-top: 1px;
 	text-align: left;
+}
+
+.tech-stack-section span:hover {
+	color: var(--color-text-main);
 }
 .profile-section {
 	display: flex;
@@ -81,27 +87,30 @@ a {
 	font-weight: bold;
 	text-decoration: none;
 	font-size: 1.5rem;
-	color: #e5e9f0;
+	color: var(--color-text-main);
 	letter-spacing: 0.5px;
 }
-.author-role  {
-	margin-top: 15px;
+.author-name:hover {
+	transform: scale(1.1);
+}
+.author-role {
+	margin-top: 13px;
 	width: fit-content;
 	text-decoration: none;
-	border-bottom: 1px solid #4b5263;
-	color: #7b8496;
+	border-bottom: 1px solid var(--color-border);
+	color: var(--color-text-muted);
 	font-weight: 300;
 	font-size: 1.1rem;
 	cursor: context-menu;
 }
-.author-role: hover {
-	color: white;
+.author-role:hover {
+	color: var(--color-text-main);
 }
 
 .intro-section {
 	margin-top: 20px;
 	line-height: 1.7;
-	color: #a0a8ba;
+	color: var(--color-text-muted);
 	width: 100%;
 	margin-bottom: 0px;
 }

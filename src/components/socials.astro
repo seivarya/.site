@@ -1,5 +1,4 @@
 ---
-
 const mail = "seivarya.he@gmail.com";
 const twitter = "https://x.com/seivarya";
 const telegram = "https://t.me/seivarya";
@@ -8,7 +7,6 @@ const linkedin = "https://www.linkedin.com/in/seivarya/";
 const bluesky = "https://bsky.app/profile/seivarya.bsky.social";
 const chess = "https://www.chess.com/member/seivarya";
 const discord = "https://discord.com/users/1345276369566699530";
-
 ---
 
 <div class="main-container">
@@ -126,20 +124,20 @@ a {
 }
 
 .icon:hover {
-	transform: translateY(-4px) scale(1.08);
+	transform: translateY(-2.4px) scale(1.2);
 }
 
 /* optional subtle colors per platform */
-.github-container:hover { color: #ffffff; }
-.twitter-container:hover { color: #ffffff; }
-.linkedin-container:hover { color: #0077b5;}
-.telegram-container:hover { color: #2AABEE; }
-.discord-container:hover { color: #5865F2; }
+.github-container:hover { color: var(--color-brand-github); }
+.twitter-container:hover { color: var(--color-brand-twitter); }
+.linkedin-container:hover { color: var(--color-brand-linkedin);}
+.telegram-container:hover { color: var(--color-brand-telegram); }
+.discord-container:hover { color: var(--color-brand-discord); }
 .email-container:hover { 
 	color: yellow;
 }
 .chess-container:hover { 
-	color: #ffffff; 
+	color: var(--color-brand-github); /* using github color for chess as it was white previously */
 }
-.bluesky-container:hover { color: #1185fe; }
+.bluesky-container:hover { color: var(--color-brand-bluesky); }
 </style>

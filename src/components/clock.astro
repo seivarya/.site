@@ -2,7 +2,7 @@
 ---
 <div id="clock-wrapper">
 	<span id="current-time">--:--:--</span>
-	<span class="gmt">| GMT+5:30</span>
+	<span id="gmt">| GMT+5:30</span>
 </div>
 
 <style>
@@ -15,15 +15,17 @@
 }
 </style>
 <script>
-function updateClock() {
+function clock_time() {
 	const now = new Date();
+
 	const seconds = now.getSeconds();
 	const minutes = now.getMinutes();
 	const hours = now.getHours();
 
 	const timeDisplay = document.getElementById("current-time");
-	if (!timeDisplay) {
-		console.log("Clock display element not found");
+	const gmtDisplay = document.getElementById("gmt");
+	if (!timeDisplay || !gmtDisplay) {
+		console.log("not found");
 		return;
 	}
 
@@ -34,6 +36,6 @@ function updateClock() {
 			":" +
 			("0" + seconds).slice(-2);
 }
-updateClock();
-setInterval(updateClock, 1000);
+clock_time();
+setInterval(clock_time, 1000);
 </script>

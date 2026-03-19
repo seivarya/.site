@@ -1,0 +1,54 @@
+@font-face {
+    font-family: SauceCodeProNFM;
+    src: url("../assets/fonts/SauceCodeProNFM.ttf");
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url("../assets/fonts/OpenSans.ttf");
+}
+
+:root {
+    /* Grayscale / Dullish B&W Palette */
+    --color-bg: #121212;
+    --color-text-main: #ffffff;
+    --color-text-primary: #9e9e9e;
+    --color-text-muted: #6b6b6b;
+    --color-text-hover: #e0e0e0;
+    --color-border: #2e2e2e;
+    --color-bg-alt: #1a1a1a;
+
+    --color-tech-stack: #6b6b6b;
+    --color-tech-stack-span: #cfcfcf;
+    --color-loading: #ffffff;
+
+    --color-brand-github: #ffffff;
+    --color-brand-twitter: #ffffff;
+    --color-brand-linkedin: #0077b5;
+    --color-brand-telegram: #2AABEE;
+    --color-brand-discord: #5865F2;
+    --color-brand-bluesky: #1185fe;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    /* Dullish base color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "SauceCodeProNFM", sans-serif;
+
+    /* Prevent text selection globally */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Make link cursor default instead of pointer */
+a {
+    cursor: default;
+}

@@ -1,0 +1,43 @@
+---
+const {title, startText, date, link} = Astro.props;
+---
+
+<a href={link} class="clean-index">
+	<span class="index-title">{title}</span>
+	<span class="index-date">{date}</span>
+</a>
+
+<style>
+.clean-index {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 0;
+	color: var(--color-text-primary);
+	text-decoration: none;
+	border-bottom: 1px solid var(--color-border);
+	transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.clean-index:hover {
+	border-bottom-color: var(--color-text-hover); 
+}
+
+.clean-index:hover .index-title,
+.clean-index:hover .index-date {
+	color: var(--color-text-main);
+}
+
+.index-title {
+	font-weight: normal; 
+	font-size: 1rem;
+	transition: color 0.2s ease;
+}
+
+.index-date {
+	color: var(--color-text-muted);
+	font-size: 0.9rem;
+	transition: color 0.2s ease;
+}
+</style>

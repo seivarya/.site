@@ -6,18 +6,18 @@ import Navigation from "./navigation.astro";
 <header class="top-bar">
 	<span class="est-badge">EST. 2005</span>
 	<div class="clock-display">
-		<a href="#">
-			<img src="/src/assets/clock.svg" alt="clock" width="20" height="20" />
-		</a>
+		<img src="/src/assets/clock.svg" alt="clock" width="20" height="20" />
 		<Clock />
 	</div>
 </header>
 
 <div class="nav-section-wrapper">
-<div class="avatar-wrapper">
-	<img class="avatar-image" src="/self.png" width="90" height="90" alt="avatar" />
-	<Navigation/>
-	</div>
+	<a href="/">
+		<div class="avatar-wrapper">
+			<img class="avatar-image" src="/self.png" width="90" height="90" alt="avatar" />
+			<Navigation/>
+		</div>
+	</a>
 </div>
 
 <style>
@@ -32,13 +32,13 @@ import Navigation from "./navigation.astro";
 	width: 100%;
 }
 .est-badge {
-	color: #7b8496;
+	color: var(--color-text-muted);
 }
 .clock-display {
 	display: flex;
 	align-items: center;
 	gap: 10px;
-	color: #7b8496;
+	color: var(--color-text-muted);
 }
 .clock-display img {
 	opacity: 0.8;

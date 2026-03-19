@@ -1,8 +1,47 @@
 ---
 import Home from "../layouts/home.astro";
+import CleanIndex from "../components/clean_index.astro";
+import Footer from "../components/footer.astro";
+const notes = [
+{
+title: "notes on cpp learning from learncpp.com",
+date: "19-03-2026",
+link: "/"
+}
+];
 ---
 
-
 <Home>
+	<h1 class="page-title">notes</h1>
+	<p class="page-subtitle">technical learnings, blogs, tutorials and deep dives.</p>
 
+	<div class="list-container">
+		{notes.map((post) => (
+		<CleanIndex title={post.title} date={post.date} link={post.link} />
+		))}
+	</div>
+
+	<div style="margin-top: auto;">
+		<Footer />
+	</div>
 </Home>
+
+<style>
+.page-title {
+	font-size: 1.5rem;
+	color: var(--color-text-main);
+}
+
+.page-subtitle {
+	font-size: 1.1rem;
+	color: var(--color-text-muted);
+	margin-top: 15px;
+	margin-bottom: 60px;
+}
+
+.list-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+</style>
