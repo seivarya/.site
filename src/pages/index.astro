@@ -15,27 +15,36 @@ import Socials from "../components/socials.astro";
 		<a class="author-role" href="#">backend developer</a>
 	</section>
 	<section class="mid-section">
-	<div class="intro-section">
-		<p>
-			"_very shitty intro i should write a better one_"<br>
-			hey it's seivarya / sivank, i am a backend developer (i think)
-			currently working with some low level stuff. while also working freelance in web developement 
-			in my free time, you'll usually find me writing notes, drawing arts (rarely), or playing chess. i'm currently working with:
-		</p><br />
-	</div>
-	
-	<div class="tech-stack-section">
-		
-	<span>c</span> · <span>python</span> · <span>node.js</span> · <span>git</span> · <span>sqlite</span> · <span>lua</span><br /><br /><br />
+		<div class="intro-section">
+			<p>
+				hey, it's shivang. i am a backend developer (i think).
+				currently working with some low level stuff. while also working freelance in web.
+				in my free time, you'll usually find me writing , playing chess, or reading books. i'm currently working with:
+			</p><br />
+		</div>
 
+		<div class="tech-stack-section">
 
+			<span>c</span> · <span>python</span> · <span>node.js</span> · <span>git</span> · <span>neovim</span> · <span>arch</span> · <span>postgres</span><br /><br /><br />
+		</div>
+		<div class="end-section">
+			If you want to work together, or have some feedback regarding any of my projects, 
+			shoot me a mail at 
+			<a href="mailto:hey@seivarya.in">hey@seivarya.in</a>
+		</div>
 
-	</section> 
+	</section>
 	<Socials/>
 	<Footer />
 </Home>
 
 <style>
+.end-section {
+	margin-bottom:40px;
+}
+a {
+	color: unset;
+}
 .mid-section {
 	display: flex;
 	flex-direction: column;
@@ -43,8 +52,9 @@ import Socials from "../components/socials.astro";
 	justify-content: center;
 }
 .tech-stack {
-	margin-top: 5px;
+	margin-top: 3px;
 	font-size: 1.9rem;
+	text-align: left;
 	color: #6b7280;
 }
 .tech-stack span {
@@ -52,10 +62,14 @@ import Socials from "../components/socials.astro";
 	font-size: 1.9rem;
 	border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
 }
+.tech-stack-section {
+	margin-top: 1px;
+	text-align: left;
+}
 .profile-section {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 16px;
 }
 .name-container {
 	display: flex;
@@ -70,14 +84,20 @@ import Socials from "../components/socials.astro";
 	color: #e5e9f0;
 	letter-spacing: 0.5px;
 }
-.author-role {
+.author-role  {
+	margin-top: 15px;
 	width: fit-content;
 	text-decoration: none;
 	border-bottom: 1px solid #4b5263;
 	color: #7b8496;
 	font-weight: 300;
 	font-size: 1.1rem;
+	cursor: context-menu;
 }
+.author-role: hover {
+	color: white;
+}
+
 .intro-section {
 	margin-top: 20px;
 	line-height: 1.7;

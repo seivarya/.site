@@ -87,7 +87,6 @@ const discord = "https://discord.com/users/1345276369566699530";
 .main-container {
 	display: flex;
 	flex-direction: column;
-	text-align: center;
 	justify-content: center;
 	align-items: center;
 }
@@ -100,18 +99,18 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 28px;
-	margin-top: 20px;
+	gap: 45px;
+	margin-top: 36px;
 }
 
 .icon {
-	width: 38px;
-	height: 38px;
+	width: 30px;
+	height: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 14px;
-	cursor: pointer;
+	cursor: default;
 	transition: all 0.25s ease;
 }
 
@@ -120,7 +119,6 @@ a {
 	transform: scale(1.6);
 }
 
-/* actual svg */
 .icon svg {
 	width: 28px;
 	height: 28px;
@@ -129,18 +127,16 @@ a {
 
 .icon:hover {
 	transform: translateY(-4px) scale(1.08);
-	background: rgba(255,255,255,0.08);
-	box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
 /* optional subtle colors per platform */
-.github-container:hover { color: #fff; }
-.twitter-container:hover { color: #000000; }
-.linkedin-container:hover { color: #0077b5; }
+.github-container:hover { color: #ffffff; }
+.twitter-container:hover { color: #ffffff; }
+.linkedin-container:hover { color: #0077b5;}
 .telegram-container:hover { color: #2AABEE; }
 .discord-container:hover { color: #5865F2; }
 .email-container:hover { 
-	color: #EA4335;
+	color: yellow;
 }
 .chess-container:hover { 
 	color: #ffffff; 

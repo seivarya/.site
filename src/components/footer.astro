@@ -23,35 +23,24 @@
 				<span class="dot-load">.</span>
 			</span>
 		</div>
-		<div class="theme-toggle">
+		<div class="source-code-section">
 			<span><a href="https://github.com/seivarya/">source code</a></span>
 		</div>
 	</div>
 
-	<div class="copyright">
-		<a href="https://github.com/seivarya" target="_blank">
-			&copy; <span id="current-year"></span>
-			seivarya</a>
-	</div>
 
 </footer>
 
-<script>
-const currentYearElement = document.getElementById("current-year");
-if (currentYearElement) {
-	currentYearElement.textContent = String(new Date().getFullYear());
-}
-</script>
 
 <style>
+
 .site-footer {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 25px;
-	margin-top: auto;
-	padding-top: 60px;
+	padding-top: 30px;
 	font-family: inherit;
 	font-size: 0.95rem;
 }
@@ -138,7 +127,7 @@ a:hover {
 }
 }
 
-.theme-toggle {
+.source-code-section {
 	display: flex;
 	align-items: center;
 	color: #7b8496;
