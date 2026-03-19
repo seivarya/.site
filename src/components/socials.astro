@@ -133,11 +133,17 @@ a {
 .linkedin-container:hover { color: var(--color-brand-linkedin);}
 .telegram-container:hover { color: var(--color-brand-telegram); }
 .discord-container:hover { color: var(--color-brand-discord); }
-.email-container:hover { 
+.email-container:hover {
 	color: yellow;
 }
-.chess-container:hover { 
+.chess-container:hover {
 	color: var(--color-brand-github); /* using github color for chess as it was white previously */
 }
 .bluesky-container:hover { color: var(--color-brand-bluesky); }
+
+@media (max-width: 768px) {
+	.icons-container {
+		gap: 30px;
+	}
+}
 </style>

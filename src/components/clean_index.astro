@@ -13,6 +13,8 @@ const {title, startText, date, link} = Astro.props;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	gap: 17px;
+	margin: 0px;
 	padding: 16px 0;
 	color: var(--color-text-primary);
 	text-decoration: none;
@@ -38,6 +40,8 @@ const {title, startText, date, link} = Astro.props;
 .index-date {
 	color: var(--color-text-muted);
 	font-size: 0.9rem;
+	white-space: nowrap;
+	flex-shrink: 0;
 	transition: color 0.2s ease;
 }
 </style>

@@ -48,7 +48,13 @@ body {
     -ms-user-select: none;
 }
 
-/* Make link cursor default instead of pointer */
 a {
     cursor: default;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+        /* Default is usually 16px, this makes all rem-based sizes smaller */
+    }
 }

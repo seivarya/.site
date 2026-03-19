@@ -12,12 +12,12 @@ import Navigation from "./navigation.astro";
 </header>
 
 <div class="nav-section-wrapper">
-	<a href="/">
-		<div class="avatar-wrapper">
+	<div class="avatar-wrapper">
+		<a href="/" class="avatar-link" aria-label="home" style="display: contents;">
 			<img class="avatar-image" src="/self.png" width="90" height="90" alt="avatar" />
-			<Navigation/>
-		</div>
-	</a>
+		</a>
+		<Navigation/>
+	</div>
 </div>
 
 <style>
@@ -54,5 +54,16 @@ import Navigation from "./navigation.astro";
 	filter: contrast(110%);
 	border-radius: 10px;
 	object-fit: cover;
+}
+
+@media (max-width: 768px) {
+	.top-bar {
+		margin-bottom: 30px;
+	}
+	.avatar-wrapper {
+		flex-direction: column-reverse;
+		gap: 30px;
+		margin-bottom: 20px;
+	}
 }
 </style>
