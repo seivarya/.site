@@ -1,7 +1,54 @@
 ---
-const { title, date, link } = Astro.props;
+const { title, link } = Astro.props;
 ---
 
-<a href={link}>
-
+<a class="img-container" href={link.src}>
+	<img class="img" src={link.src} alt={link.src}>
+	<div class="img-footer">
+		<p class="img-title">{title}</p>
+	</div>
 </a>
+
+<style>
+a {
+	color: unset;
+}
+
+.img-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 800px;
+	text-decoration: none;
+}
+.img {
+	border: 1.3px solid gray;
+	width: 570px;
+	height: auto;
+	max-width: 100%;
+
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.img-container:hover .img {
+	transform: scale(1.03);
+	box-shadow: 0 8px 25px rgba(180, 180, 180, 0.15);
+}
+
+.img-footer {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.img-title {
+	font-size: 0.8rem;
+}
+
+@media(max-width: 900px) {
+	.img {
+		width: 300px;
+		height: auto;
+	}
+}
+</style>

@@ -1,12 +1,16 @@
 ---
 import Home from "../layouts/home.astro";
-import CleanIndex from "../components/clean_index.astro";
+import ArtBox from "../components/artbox.astro";
 import Footer from "../components/footer.astro";
+
+// art images imports
+
+import devilman from "../content/arts/devilman_crybaby.png";
+
 const notes = [
 {
-title: "some fancy image to see if the structuring works",
-date: "67-67-67",
-link: "/"
+title: "mike makimura from devilman crybaby",
+link: devilman
 }
 ];
 ---
@@ -18,7 +22,7 @@ link: "/"
 
 	<div class="list-container">
 		{notes.map((post) => (
-		<CleanIndex title={post.title} date={post.date} link={post.link} />
+		<ArtBox title={post.title} link={post.link} />
 		))}
 	</div>
 
