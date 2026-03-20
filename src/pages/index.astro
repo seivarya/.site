@@ -10,10 +10,10 @@ import Socials from "../components/socials.astro";
 			<h1 class="author-name">
 				<a class="author-name" href="/">seivarya</a>
 			</h1>
+			<a class="author-role" href="/">backend developer</a>
 		</div>
-
-		<a class="author-role" href="/">backend developer</a>
 	</section>
+
 	<section class="mid-section">
 		<div class="intro-section">
 			<p>
@@ -32,7 +32,7 @@ import Socials from "../components/socials.astro";
 			shoot me a mail at 
 			<a href="mailto:hey@seivarya.in">hey@seivarya.in</a><br/><br/>
 			in my free time, you’ll usually find me writing, playing chess, reading books, or watching shows.
-			maybe I’ll create a section for it too. i have many social accounts linked, but i’m not active on any of em. 
+			maybe I’ll create a section for it too. i have many social accounts linked, but i’m not active on most of them (because i have a life) 
 			you’ll get the fastest response from <a href="https://discord.com/users/1345276369566699530">discord</a>.
 			<br/><br/>
 			this site was mostly created by me but i took some design ideas from 
@@ -80,17 +80,16 @@ a {
 }
 .profile-section {
 	display: flex;
-	flex-direction: column;
 	gap: 16px;
 }
 .name-container {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
 	gap: 10px;
 }
 .author-name {
 	margin: 0;
-	font-weight: bold;
+	font-weight:bold;
 	text-decoration: none;
 	font-size: 1.5rem;
 	color: var(--color-text-main);
@@ -123,4 +122,6 @@ a {
 .intro-section p {
 	margin: 0;
 }
+
+
 </style>

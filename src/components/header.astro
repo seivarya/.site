@@ -22,6 +22,12 @@ import Navigation from "./navigation.astro";
 
 <style>
 
+.nav-section-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .top-bar {
 	display: flex;
 	justify-content: space-between;
@@ -45,8 +51,8 @@ import Navigation from "./navigation.astro";
 }
 .avatar-wrapper {
 	display: flex;
-	gap: 90px;
 	flex-direction: row;
+	justify-content: space-between;
 	width: 100%;
 	margin-bottom: 40px;
 }
@@ -56,14 +62,18 @@ import Navigation from "./navigation.astro";
 	object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 826px) {
 	.top-bar {
-		margin-bottom: 30px;
+		margin-bottom: 40px;
 	}
+	.nav-section-wrapper {
+		justify-content: center;
+	}
+
 	.avatar-wrapper {
-		flex-direction: column-reverse;
-		gap: 30px;
-		margin-bottom: 20px;
+		display: flex;
+		flex-direction: row;
+		gap: 50px;
 	}
 }
 </style>

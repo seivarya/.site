@@ -28,6 +28,8 @@
     --color-brand-telegram: #2AABEE;
     --color-brand-discord: #5865F2;
     --color-brand-bluesky: #1185fe;
+    --color-brand-email: yellow;
+    --color-brand-spotify: green;
 }
 
 body {
