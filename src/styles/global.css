@@ -9,7 +9,7 @@
 }
 
 :root {
-    /* Grayscale / Dullish B&W Palette */
+    /* if you want to change the theme of site, configure this palatte using gpitty (coz i know you won't do it manually) */
     --color-bg: #121212;
     --color-text-main: #ffffff;
     --color-text-primary: #9e9e9e;

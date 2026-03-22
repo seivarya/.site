@@ -11,8 +11,8 @@ import Navigation from "./navigation.astro";
 	</div>
 </header>
 
-<div class="nav-section-wrapper">
-	<div class="avatar-wrapper">
+<div class="nav-container">
+	<div class="avatar-container">
 		<a href="/" class="avatar-link" aria-label="home" style="display: contents;">
 			<img class="avatar-image" src="/self.png" width="90" height="90" alt="avatar" />
 		</a>
@@ -22,7 +22,7 @@ import Navigation from "./navigation.astro";
 
 <style>
 
-.nav-section-wrapper {
+.nav-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -49,7 +49,7 @@ import Navigation from "./navigation.astro";
 .clock-display img {
 	opacity: 0.8;
 }
-.avatar-wrapper {
+.avatar-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -66,11 +66,11 @@ import Navigation from "./navigation.astro";
 	.top-bar {
 		margin-bottom: 40px;
 	}
-	.nav-section-wrapper {
+	.nav-container {
 		justify-content: center;
 	}
 
-	.avatar-wrapper {
+	.avatar-container {
 		display: flex;
 		flex-direction: row;
 		gap: 50px;

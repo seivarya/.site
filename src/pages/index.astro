@@ -14,115 +14,122 @@ import Socials from "../components/socials.astro";
 		</div>
 	</section>
 
-	<section class="mid-section">
+	<section class="about-section">
 		<div class="intro-section">
 			<p>
-				hey, it's shivang. i am a backend developer (i think).
-				currently working with some low level stuff. while also freelancing in web.
-				i'm currently working with:
+				hey, it's shivang. i am a backend developer (i think). currently
+				working with some low level stuff. while also freelancing in
+				web. i'm currently working with:
 			</p><br />
 		</div>
 
 		<div class="tech-stack-section">
-			<span>c</span> | <span>python</span> | <span>node.js</span> | <span>git</span> | <span>neovim</span> | <span>arch</span>
+			<span>c</span> | <span>python</span> | <span>node.js</span> | <span
+				>git</span
+			> | <span>neovim</span> | <span>arch</span>
 			<br /><br /><br />
 		</div>
 
-		<div class="end-section">
-			If you want to work together, or have some feedback regarding any of my projects, <br/><br/>
-			shoot me a mail at 
-			<a href="mailto:hey@seivarya.in">hey@seivarya.in</a><br/><br/>
-			in my free time, you’ll usually find me writing, playing chess, reading books, or watching shows.
-			maybe I’ll create a section for it too. i have many social accounts linked, but i’m not active on most of them (because i have a life) 
-			you’ll get the fastest response from <a href="https://discord.com/users/1345276369566699530">discord</a>.
-			<br/><br/>
-			this site was mostly created by me but i took some design ideas from 
-			<a href="https://namishh.com">namish</a> & <a href="https://avhi.in">avhi.in</a> do checkout their stuff too.
+		<div class="contact-section">
+			If you want to work together, or have some feedback regarding any of
+			my projects, <br /><br />
+			shoot me a mail at
+			<a href="mailto:hey@seivarya.in">hey@seivarya.in</a><br /><br />
+			in my free time, you’ll usually find me writing, playing chess, reading
+			books, or watching shows. maybe I’ll create a section for it too. i have
+			many social accounts linked, but i’m not active on most of them (because
+			i have a life) you’ll get the fastest response from <a
+				href="https://discord.com/users/1345276369566699530">discord</a
+			>.
+			<br /><br />
+			this site was mostly created by me but i took some design ideas from
+			<a href="https://namishh.com">namish</a> & <a href="https://avhi.in"
+				>avhi.in</a
+			> do checkout their stuff too.
 		</div>
-
 	</section>
-	<Socials/>
+	<Socials />
 	<Footer />
 </Home>
 
 <style>
-.end-section {
-	margin-bottom:40px;
-}
-a {
-	color: unset;
-}
-.end-section a {
-	color: var(--color-text-muted);
-	text-decoration: none;
-	border-bottom: 1px solid var(--color-border);
-	transition: color 0.2s, border-color 0.2s;
-	padding-bottom: 2px;
-}
-.end-section a:hover {
-	color: var(--color-text-hover);
-	border-bottom-color: var(--color-text-hover);
-}
-.mid-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
+	.contact-section {
+		margin-bottom: 40px;
+	}
+	a {
+		color: unset;
+	}
+	.contact-section a {
+		color: var(--color-text-muted);
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-border);
+		transition:
+			color 0.2s,
+			border-color 0.2s;
+		padding-bottom: 2px;
+	}
+	.contact-section a:hover {
+		color: var(--color-text-hover);
+		border-bottom-color: var(--color-text-hover);
+	}
+	.about-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-.tech-stack-section {
-	color: var(--color-text-muted);
-	margin-top: 1px;
-	text-align: left;
-}
+	.tech-stack-section {
+		color: var(--color-text-muted);
+		margin-top: 1px;
+		text-align: left;
+	}
 
-.tech-stack-section span:hover {
-	color: var(--color-text-main);
-}
-.profile-section {
-	display: flex;
-	gap: 16px;
-}
-.name-container {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-.author-name {
-	margin: 0;
-	font-weight:bold;
-	text-decoration: none;
-	font-size: 1.5rem;
-	color: var(--color-text-main);
-	letter-spacing: 0.5px;
-}
-.author-name:hover {
-	transform: scale(1.1);
-}
-.author-role {
-	margin-top: 13px;
-	width: fit-content;
-	text-decoration: none;
-	border-bottom: 1px solid var(--color-border);
-	color: var(--color-text-muted);
-	font-weight: 300;
-	font-size: 1.1rem;
-	cursor: context-menu;
-}
-.author-role:hover {
-	color: var(--color-text-main);
-}
+	.tech-stack-section span:hover {
+		color: var(--color-text-main);
+	}
+	.profile-section {
+		display: flex;
+		gap: 16px;
+	}
+	.name-container {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.author-name {
+		margin: 0;
+		font-weight: bold;
+		text-decoration: none;
+		font-size: 1.5rem;
+		color: var(--color-text-main);
+		letter-spacing: 0.5px;
+	}
+	.author-name:hover {
+		transform: scale(1.1);
+	}
+	.author-role {
+		margin-top: 13px;
+		width: fit-content;
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-border);
+		color: var(--color-text-muted);
+		font-weight: 300;
+		font-size: 1.1rem;
+		cursor: context-menu;
+	}
+	.author-role:hover {
+		color: var(--color-text-main);
+	}
 
-.intro-section {
-	margin-top: 20px;
-	line-height: 1.7;
-	color: var(--color-text-muted);
-	width: 100%;
-	margin-bottom: 0px;
-}
-.intro-section p {
-	margin: 0;
-}
-
-
+	.intro-section {
+		margin-top: 20px;
+		line-height: 1.7;
+		color: var(--color-text-muted);
+		width: 100%;
+		margin-bottom: 0px;
+	}
+	.intro-section p {
+		margin: 0;
+	}
 </style>
