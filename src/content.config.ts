@@ -1,28 +1,43 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob, file } from 'astro/loaders';
+import { z } from 'astro/zod';
 
-const baseSchema = z.object({
-	title: z.string().optional(),
-	date: z.coerce.date().optional(),
+const writings = defineCollection({
+	loader: glob({ base: './src/content/writings', pattern: '**/*.mdx' }),
+	schema: z.object({
+		title: z.string().optional(),
+		//date: z.date().optional(),
+		description: z.string().optional(),
+	}),
 });
 
 const notes = defineCollection({
-	type: "content",
-});
-
-const writings = defineCollection({
-	type: "content",
-	schema: baseSchema
+	loader: glob({ base: './src/content/notes', pattern: '**/*.mdx' }),
+	schema: z.object({
+		title: z.string().optional(),
+		//date: z.date().optional(),
+		description: z.string().optional(),
+	}),
 });
 
 const arts = defineCollection({
-	type: "content",
-	schema: baseSchema
+	loader: glob({ base: './src/content/arts', pattern: '**/*.mdx' }),
+	schema: z.object({
+		title: z.string().optional(),
+		//date: z.date().optional(),
+		description: z.string().optional(),
+	}),
 });
 
 const consumes = defineCollection({
-	type: "content",
-	schema: baseSchema
+	loader: glob({ base: './src/content/consumes', pattern: '**/*.mdx' }),
+	schema: z.object({
+		title: z.string().optional(),
+		//date: z.date().optional(),
+		description: z.string().optional(),
+	}),
 });
+
 
 export const collections = {
 	writings,

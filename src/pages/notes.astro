@@ -4,7 +4,6 @@ import CleanIndex from "../components/clean_index.astro";
 import Footer from "../components/footer.astro";
 
 import { getCollection } from 'astro:content';
-import { collections } from "../content.config.ts";
 
 const posts = await getCollection('notes');
 console.log(posts);
@@ -18,11 +17,11 @@ console.log(posts);
 
 	<div class="list-container">
 		{
-		posts.map(([path, post]) => (
+		posts.map((post) => (
 		<CleanIndex
-			title={post.frontmatter.title}
-			date={post.frontmatter.date}
-			link={post.url}
+			title={post.data.title}
+			date={post.data.date}
+			slug={post.id}
 		/>
 		))
 		}
