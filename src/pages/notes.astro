@@ -7,9 +7,7 @@ import { getCollection } from 'astro:content';
 import { collections } from "../content.config.ts";
 
 const posts = await getCollection('notes');
-
 console.log(posts);
-
 ---
 
 <Home>

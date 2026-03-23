@@ -5,10 +5,24 @@ const baseSchema = z.object({
 	date: z.coerce.date().optional(),
 });
 
-const writings = defineCollection({ schema: baseSchema });
-const notes = defineCollection({ schema: baseSchema });
-const arts = defineCollection({ schema: baseSchema });
-const consumes = defineCollection({ schema: baseSchema });
+const notes = defineCollection({
+	type: "content",
+});
+
+const writings = defineCollection({
+	type: "content",
+	schema: baseSchema
+});
+
+const arts = defineCollection({
+	type: "content",
+	schema: baseSchema
+});
+
+const consumes = defineCollection({
+	type: "content",
+	schema: baseSchema
+});
 
 export const collections = {
 	writings,
