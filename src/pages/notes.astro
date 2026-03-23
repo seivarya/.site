@@ -2,30 +2,31 @@
 import Home from "../layouts/home.astro";
 import CleanIndex from "../components/clean_index.astro";
 import Footer from "../components/footer.astro";
-const notes = [
-	{
-		title: "notes on cpp learning from learncpp.com",
-		date: "19-03-2026",
-		link: "/",
-	},
-];
+
+import { getCollection } from 'astro:content';
+import { collections } from "../content.config.ts";
+
+const posts = await getCollection('notes');
+
+console.log(posts);
+
 ---
 
 <Home>
-	<h1 class="page-title">notes</h1>
+	<h1 class="page-title">posts</h1>
 	<p class="page-subtitle">
 		technical learnings, blogs, tutorials and deep dives.
 	</p>
 
 	<div class="list-container">
 		{
-			notes.map((post) => (
-				<CleanIndex
-					title={post.title}
-					date={post.date}
-					link={post.link}
-				/>
-			))
+		posts.map(([path, post]) => (
+		<CleanIndex
+			title={post.frontmatter.title}
+			date={post.frontmatter.date}
+			link={post.url}
+		/>
+		))
 		}
 	</div>
 
@@ -35,22 +36,22 @@ const notes = [
 </Home>
 
 <style>
-	.page-title {
-		font-size: 1.5rem;
-		margin: 0;
-		color: var(--color-text-main);
-	}
+.page-title {
+	font-size: 1.5rem;
+	margin: 0;
+	color: var(--color-text-main);
+}
 
-	.page-subtitle {
-		font-size: 1.1rem;
-		color: var(--color-text-muted);
-		margin-top: 15px;
-		margin-bottom: 40px;
-	}
+.page-subtitle {
+	font-size: 1.1rem;
+	color: var(--color-text-muted);
+	margin-top: 15px;
+	margin-bottom: 40px;
+}
 
-	.list-container {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-	}
+.list-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
 </style>
