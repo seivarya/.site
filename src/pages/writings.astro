@@ -1,7 +1,6 @@
 ---
 import Home from "../layouts/home.astro";
-import CleanIndex from "../components/clean_index.astro";
-import Footer from "../components/footer.astro";
+import CleanIndex from "../components/CleanIndex.astro";
 const writings = [
 {
 title: "hello world: setting up the new minimal site",
@@ -19,10 +18,6 @@ link: "/"
 		{writings.map((post) => (
 		<CleanIndex title={post.title} date={post.date} link={post.link} />
 		))}
-	</div>
-
-	<div style="margin-top: 60px;">
-		<Footer />
 	</div>
 </Home>
 

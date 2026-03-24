@@ -1,7 +1,6 @@
 ---
 import Home from "../layouts/home.astro";
-import ProjectBox from "../components/project_box.astro";
-import Footer from "../components/footer.astro";
+import ProjectBox from "../components/ProjectBox.astro";
 
 const projects = [
 {
@@ -75,10 +74,6 @@ link: "https://github.com/seivarya/yt.themes"
 		{projects.map(p => (
 		<ProjectBox title={p.title} description={p.description} tags={p.tags} link={p.link} />
 		))}
-	</div>
-
-	<div style="margin-top: 60px;">
-		<Footer />
 	</div>
 </Home>
 

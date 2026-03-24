@@ -1,7 +1,6 @@
 ---
 import Home from "../layouts/home.astro";
-import ArtBox from "../components/artbox.astro";
-import Footer from "../components/footer.astro";
+import ArtBox from "../components/Artbox.astro";
 
 // art images imports
 
@@ -24,10 +23,6 @@ const notes = [
 
 	<div class="list-container">
 		{notes.map((post) => <ArtBox title={post.title} link={post.link} />)}
-	</div>
-
-	<div style="margin-top: auto;">
-		<Footer />
 	</div>
 </Home>
 
