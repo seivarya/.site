@@ -1,9 +1,9 @@
 ---
 interface Props {
-title: string;
-description: string;
-tags: string[];
-link?: string;
+	title: string;
+	description: string;
+	tags: string[];
+	link?: string;
 }
 
 const { title, description, tags, link = "/" } = Astro.props;
@@ -12,89 +12,108 @@ const { title, description, tags, link = "/" } = Astro.props;
 <div class="project-box">
 	<div class="header-row">
 		<h3 class="title">{title}</h3>
-		<a href={link} class="github-link" aria-label="GitHub Repository">
-			<svg aria-hidden="true" focusable="false" class="octicon octicon-mark-github" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align:text-bottom">
-				<path d="M10.303 16.652c-2.837-.344-4.835-2.385-4.835-5.028 0-1.074.387-2.235 1.031-3.008-.279-.709-.236-2.214.086-2.837.86-.107 2.02.344 2.708.967.816-.258 1.676-.386 2.728-.386 1.053 0 1.913.128 2.686.365.666-.602 1.848-1.053 2.708-.946.3.581.344 2.085.064 2.815.688.817 1.053 1.913 1.053 3.03 0 2.643-1.998 4.641-4.877 5.006.73.473 1.224 1.504 1.224 2.686v2.235c0 .644.537 1.01 1.182.752 3.889-1.483 6.94-5.372 6.94-10.185 0-6.081-4.942-11.044-11.022-11.044-6.081 0-10.98 4.963-10.98 11.044a10.84 10.84 0 0 0 7.112 10.206c.58.215 1.139-.172 1.139-.752v-1.719a2.768 2.768 0 0 1-1.032.215c-1.418 0-2.256-.773-2.857-2.213-.237-.58-.495-.924-.989-.988-.258-.022-.344-.129-.344-.258 0-.258.43-.451.86-.451.623 0 1.16.386 1.719 1.181.43.623.881.903 1.418.903.537 0 .881-.194 1.375-.688.365-.365.645-.687.903-.902Z"></path>
+		<a
+			href={link}
+			class="github-link"
+			aria-label="GitHub Repository"
+		>
+			<svg
+				aria-hidden="true"
+				focusable="false"
+				class="octicon octicon-mark-github"
+				viewBox="0 0 24 24"
+				width="22"
+				height="22"
+				fill="currentColor"
+				display="inline-block"
+				overflow="visible"
+				style="vertical-align:text-bottom"
+			>
+				<path
+					d="M10.303 16.652c-2.837-.344-4.835-2.385-4.835-5.028 0-1.074.387-2.235 1.031-3.008-.279-.709-.236-2.214.086-2.837.86-.107 2.02.344 2.708.967.816-.258 1.676-.386 2.728-.386 1.053 0 1.913.128 2.686.365.666-.602 1.848-1.053 2.708-.946.3.581.344 2.085.064 2.815.688.817 1.053 1.913 1.053 3.03 0 2.643-1.998 4.641-4.877 5.006.73.473 1.224 1.504 1.224 2.686v2.235c0 .644.537 1.01 1.182.752 3.889-1.483 6.94-5.372 6.94-10.185 0-6.081-4.942-11.044-11.022-11.044-6.081 0-10.98 4.963-10.98 11.044a10.84 10.84 0 0 0 7.112 10.206c.58.215 1.139-.172 1.139-.752v-1.719a2.768 2.768 0 0 1-1.032.215c-1.418 0-2.256-.773-2.857-2.213-.237-.58-.495-.924-.989-.988-.258-.022-.344-.129-.344-.258 0-.258.43-.451.86-.451.623 0 1.16.386 1.719 1.181.43.623.881.903 1.418.903.537 0 .881-.194 1.375-.688.365-.365.645-.687.903-.902Z"
+				></path>
 			</svg>
 		</a>
 	</div>
 	<p class="description">{description}</p>
 	<div class="tags-container">
-		{tags.map((tag) => (
-		<span class="tag">{tag}</span>
-		))}
+		{tags.map((tag) => <span class="tag">{tag}</span>)}
 	</div>
 </div>
 
 <style>
-.project-box {
-	display: flex;
-	flex-direction: column;
-	border: 1px solid var(--color-border); 
-	padding: 22px;
-	text-decoration: none;
-	background-color: transparent;
-	transition: border-color 0.2s ease, opacity 0.2s ease;
-	cursor: default; 
-}
+	.project-box {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--color-border);
+		padding: 22px;
+		text-decoration: none;
+		background-color: transparent;
+		transition:
+			border-color 0.2s ease,
+			opacity 0.2s ease;
+		cursor: default;
+	}
 
-.project-box:hover {
-	border-color: var(--color-text-muted);
-	opacity: 0.9;
-}
+	.project-box:hover {
+		border-color: var(--color-text-muted);
+		opacity: 0.9;
+	}
 
-.project-box:hover .title,
-.project-box:hover .description,
-.project-box:hover .tag,
-.project-box:hover .github-link {
-	color: var(--color-text-main);
-}
+	.project-box:hover .title,
+	.project-box:hover .description,
+	.project-box:hover .tag,
+	.project-box:hover .github-link {
+		color: var(--color-text-main);
+	}
 
-.header-row {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
+	.header-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
 
-.github-link {
-	color: var(--color-text-muted);
-	transition: color 0.2s ease, transform 0.2s ease;
-	cursor: pointer;
-}
+	.github-link {
+		color: var(--color-text-muted);
+		transition:
+			color 0.2s ease,
+			transform 0.2s ease;
+		cursor: pointer;
+	}
 
-.github-link:hover {
-	transform: scale(1.1);
-}
+	.github-link:hover {
+		transform: scale(1.1);
+	}
 
-.title {
-	margin: 0;
-	font-size: 1.15rem;
-	font-weight: bold;
-	color: var(--color-text-primary);
-	letter-spacing: 0.5px;
-	transition: color 0.2s ease;
-}
+	.title {
+		margin: 0;
+		font-size: 1.15rem;
+		font-weight: bold;
+		color: var(--color-text-primary);
+		letter-spacing: 0.5px;
+		transition: color 0.2s ease;
+	}
 
-.description {
-	margin: 22px 0;
-	font-size: 1rem;
-	line-height: 1.6;
-	color: var(--color-text-muted); 
-	transition: color 0.2s ease;
-}
+	.description {
+		margin: 22px 0;
+		font-size: 1rem;
+		line-height: 1.6;
+		color: var(--color-text-muted);
+		transition: color 0.2s ease;
+	}
 
-.tags-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 15px;
-	margin-top: auto; 
-}
+	.tags-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 15px;
+		margin-top: auto;
+	}
 
-.tag {
-	background-color: var(--color-bg-alt); 
-	padding: 4px 8px;
-	color: var(--color-text-primary);
-	font-size: 0.9rem;
-	transition: color 0.2s ease;
-}
+	.tag {
+		background-color: var(--color-bg-alt);
+		padding: 4px 8px;
+		color: var(--color-text-primary);
+		font-size: 0.9rem;
+		transition: color 0.2s ease;
+	}
 </style>

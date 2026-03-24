@@ -2,42 +2,50 @@
 import Home from "../layouts/home.astro";
 import CleanIndex from "../components/CleanIndex.astro";
 const writings = [
-{
-title: "hello world: setting up the new minimal site",
-date: "20-03-2026",
-link: "/"
-}
+	{
+		title: "hello world: setting up the new minimal site",
+		date: "20-03-2026",
+		link: "/",
+	},
 ];
 ---
 
 <Home>
 	<h1 class="page-title">writings</h1>
-	<p class="page-subtitle">personal thoughts (don't take them seriously)</p>
+	<p class="page-subtitle">
+		personal thoughts (don't take them seriously)
+	</p>
 
 	<div class="list-container">
-		{writings.map((post) => (
-		<CleanIndex title={post.title} date={post.date} link={post.link} />
-		))}
+		{
+			writings.map((post) => (
+				<CleanIndex
+					title={post.title}
+					date={post.date}
+					link={post.link}
+				/>
+			))
+		}
 	</div>
 </Home>
 
 <style>
-.page-title {
-	font-size: 1.5rem;
-	margin: 0;
-	color: var(--color-text-main);
-}
+	.page-title {
+		font-size: 1.5rem;
+		margin: 0;
+		color: var(--color-text-main);
+	}
 
-.page-subtitle {
-	font-size: 1.1rem;
-	color: var(--color-text-muted);
-	margin-top: 15px;
-	margin-bottom: 40px;
-}
+	.page-subtitle {
+		font-size: 1.1rem;
+		color: var(--color-text-muted);
+		margin-top: 15px;
+		margin-bottom: 40px;
+	}
 
-.list-container {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-}
+	.list-container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
 </style>

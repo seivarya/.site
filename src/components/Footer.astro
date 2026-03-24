@@ -1,12 +1,14 @@
 ---
+
 ---
 
 <footer class="site-footer">
 	<div class="footer-links">
-		<span
-		><a href="https://astro.build/" target="_blank">built with astro</a
-			></span
-		>
+		<span>
+			<a href="https://astro.build/" target="_blank">
+				built with astro
+			</a>
+		</span>
 		<span class="dot">-</span>
 		<a href="/rss.xml">rss</a>
 		<span class="dot">-</span>
@@ -23,113 +25,113 @@
 			</span>
 		</div>
 		<div class="source-code-section">
-			<span><a href="https://github.com/seivarya/">source code</a></span>
+			<span
+				><a href="https://github.com/seivarya/"
+					>source code</a
+				></span
+			>
 		</div>
 	</div>
-
-
 </footer>
 
-
 <style>
+	.site-footer {
+		margin-top: auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 25px;
+		padding-top: 30px;
+		font-family: inherit;
+		font-size: 0.95rem;
+	}
 
-.site-footer {
-	margin-top: auto;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 25px;
-	padding-top: 30px;
-	font-family: inherit;
-	font-size: 0.95rem;
-}
+	.footer-links {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		color: var(--color-text-muted);
+	}
 
-.footer-links {
-	display: flex;
-	align-items: center;
-	gap: 15px;
-	color: var(--color-text-muted);
-}
+	.footer-links span {
+		color: var(--color-text-muted);
+	}
 
-.footer-links span {
-	color: var(--color-text-muted);
-}
+	a {
+		color: var(--color-text-muted);
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-border);
+		transition:
+			color 0.2s,
+			border-color 0.2s;
+		padding-bottom: 2px;
+	}
 
-a {
-	color: var(--color-text-muted);
-	text-decoration: none;
-	border-bottom: 1px solid var(--color-border);
-	transition:
-		color 0.2s,
-		border-color 0.2s;
-	padding-bottom: 2px;
-}
+	a:hover {
+		color: var(--color-text-hover);
+		border-bottom-color: var(--color-text-hover);
+	}
 
-a:hover {
-	color: var(--color-text-hover);
-	border-bottom-color: var(--color-text-hover);
-}
+	.copyright {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		color: var(--color-text-muted);
+	}
 
-.copyright {
-	margin: 0;
-	display: flex;
-	align-items: center;
-	gap: 6px;
-	color: var(--color-text-muted);
-}
+	.footer-bottom {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 15px;
+	}
 
-.footer-bottom {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 15px;
-}
+	.loading-state {
+		display: flex;
+		align-items: center;
+		color: var(--color-loading);
+		letter-spacing: 1px;
+	}
 
-.loading-state {
-	display: flex;
-	align-items: center;
-	color: var(--color-loading);
-	letter-spacing: 1px;
-}
+	.dots {
+		margin-left: 6px;
+		display: flex;
+		gap: 6px;
+	}
 
-.dots {
-	margin-left: 6px;
-	display: flex;
-	gap: 6px;
-}
+	.dot-load {
+		animation: load-bounce 1.4s infinite both;
+		display: inline-block;
+	}
+	.dot-load:nth-child(1) {
+		animation-delay: 0s;
+	}
+	.dot-load:nth-child(2) {
+		animation-delay: 0.2s;
+	}
+	.dot-load:nth-child(3) {
+		animation-delay: 0.4s;
+	}
 
-.dot-load {
-	animation: load-bounce 1.4s infinite both;
-	display: inline-block;
-}
-.dot-load:nth-child(1) {
-	animation-delay: 0s;
-}
-.dot-load:nth-child(2) {
-	animation-delay: 0.2s;
-}
-.dot-load:nth-child(3) {
-	animation-delay: 0.4s;
-}
+	@keyframes load-bounce {
+		0%,
+		80%,
+		100% {
+			transform: translateY(0);
+			opacity: 0.4;
+		}
+		40% {
+			transform: translateY(-3px);
+			opacity: 1;
+		}
+	}
 
-@keyframes load-bounce {
-0%,
-80%,
-100% {
-	transform: translateY(0);
-	opacity: 0.4;
-}
-40% {
-	transform: translateY(-3px);
-	opacity: 1;
-}
-}
-
-.source-code-section {
-	display: flex;
-	align-items: center;
-	color: var(--color-text-muted);
-}
+	.source-code-section {
+		display: flex;
+		align-items: center;
+		color: var(--color-text-muted);
+	}
 </style>

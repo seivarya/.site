@@ -1,3 +1,7 @@
+---
+
+---
+
 <nav class="nav-bar">
 	<a href="/">home</a>
 	<a href="/projects">projects</a>
@@ -7,58 +11,58 @@
 </nav>
 
 <style>
-.nav-bar {
-	display: flex;
-	align-items: center;
-	gap: 50px;
-	margin-top: 40px;
-	margin-bottom: 30px;
-	width: fit-content;
-	flex-wrap: wrap;
-}
-
-/*  i have no idea what is this  */
-.nav-bar a {
-	position: relative;
-	display: inline-block;
-	color: var(--color-text-muted);
-	text-decoration: none;
-	padding-bottom: 4px;
-	text-align: center;
-	transition: color 0.25s ease;
-}
-
-.nav-bar a::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 1px;
-	background: var(--color-border);
-	transform: scaleX(0.8);
-	transform-origin: center;
-	transition: all 0.25s ease;
-}
-
-.nav-bar a:hover {
-	color: var(--color-text-main);
-}
-
-.nav-bar a:hover::after {
-	background: var(--color-text-main);
-	transform: scaleX(1.1);
-}
-
-@media (max-width: 900px) {
 	.nav-bar {
-		justify-content: center;   /* centers under pfp */
-		gap: 22px;
-		margin-top: 10px;
+		display: flex;
+		align-items: center;
+		gap: 50px;
+		margin-top: 40px;
+		margin-bottom: 30px;
+		width: fit-content;
+		flex-wrap: wrap;
 	}
 
+	/*  i have no idea what is this  */
 	.nav-bar a {
-		min-width: 70px;
+		position: relative;
+		display: inline-block;
+		color: var(--color-text-muted);
+		text-decoration: none;
+		padding-bottom: 4px;
+		text-align: center;
+		transition: color 0.25s ease;
 	}
-}
+
+	.nav-bar a::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background: var(--color-border);
+		transform: scaleX(0.8);
+		transform-origin: center;
+		transition: all 0.25s ease;
+	}
+
+	.nav-bar a:hover {
+		color: var(--color-text-main);
+	}
+
+	.nav-bar a:hover::after {
+		background: var(--color-text-main);
+		transform: scaleX(1.1);
+	}
+
+	@media (max-width: 900px) {
+		.nav-bar {
+			justify-content: center; /* centers under pfp */
+			gap: 22px;
+			margin-top: 10px;
+		}
+
+		.nav-bar a {
+			min-width: 70px;
+		}
+	}
 </style>

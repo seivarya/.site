@@ -7,7 +7,7 @@ const writings = defineCollection({
 	schema: z.object({
 		title: z.string().optional(),
 		description: z.string().optional(),
-		// date: z.date().optional(),
+		date: z.coerce.date().transform((d) => d.toISOString().split('T')[0]).optional(),
 	}),
 });
 
@@ -16,7 +16,7 @@ const notes = defineCollection({
 	schema: z.object({
 		title: z.string().optional(),
 		description: z.string().optional(),
-		// date: z.date().optional(),
+		date: z.coerce.date().transform((d) => d.toISOString().split('T')[0]).optional(),
 	}),
 });
 
@@ -25,7 +25,7 @@ const arts = defineCollection({
 	schema: z.object({
 		title: z.string().optional(),
 		description: z.string().optional(),
-		// date: z.date().optional(),
+		date: z.coerce.date().transform((d) => d.toISOString().split('T')[0]).optional(),
 	}),
 });
 
@@ -34,7 +34,7 @@ const consumes = defineCollection({
 	schema: z.object({
 		title: z.string().optional(),
 		description: z.string().optional(),
-		// date: z.date().optional(),
+		date: z.coerce.date().transform((d) => d.toISOString().split('T')[0]).optional(),
 	}),
 });
 

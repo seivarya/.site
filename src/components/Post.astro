@@ -1,5 +1,3 @@
-<!-- structure of the <post> content -->
-
 ---
 import Header from "./Header.astro";
 import Home from "../layouts/home.astro";
@@ -9,27 +7,23 @@ const Content = content;
 console.log(data);
 ---
 
-
+<!-- structure of the <post> content -->
 <div class="post-container">
 	<Home>
-		<h2 class="post-heading"> { data.title } </h2>
+		<h2 class="post-heading">{data.title}</h2>
 	</Home>
-
 </div>
 
 <style>
+	.post-container {
+		display: flex;
+		flex-direction: column;
+		max-width: 800px;
+		height: auto;
+		justify-content: center;
+		text-align: center;
+	}
 
-.post-container {
-	display: flex;
-	flex-direction: column;
-	max-width: 800px;
-	height: auto;
-	justify-content: center;
-	text-align: center;
-}
-
-.post-heading {
-
-}
-
+	.post-heading {
+	}
 </style>

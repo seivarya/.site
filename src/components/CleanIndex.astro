@@ -1,5 +1,5 @@
 ---
-const {title, date, slug} = Astro.props;
+const { title, date, slug } = Astro.props;
 ---
 
 <a href={`/content/notes/${slug}`} class="clean-index">
@@ -8,40 +8,42 @@ const {title, date, slug} = Astro.props;
 </a>
 
 <style>
-.clean-index {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	gap: 17px;
-	margin: 0px;
-	padding: 16px 0;
-	color: var(--color-text-primary);
-	text-decoration: none;
-	border-bottom: 1px solid var(--color-border);
-	transition: color 0.2s ease, border-color 0.2s ease;
-}
+	.clean-index {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 17px;
+		margin: 0px;
+		padding: 16px 0;
+		color: var(--color-text-primary);
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-border);
+		transition:
+			color 0.2s ease,
+			border-color 0.2s ease;
+	}
 
-.clean-index:hover {
-	border-bottom-color: var(--color-text-hover); 
-}
+	.clean-index:hover {
+		border-bottom-color: var(--color-text-hover);
+	}
 
-.clean-index:hover .index-title,
-.clean-index:hover .index-date {
-	color: var(--color-text-main);
-}
+	.clean-index:hover .index-title,
+	.clean-index:hover .index-date {
+		color: var(--color-text-main);
+	}
 
-.index-title {
-	font-weight: normal; 
-	font-size: 1rem;
-	transition: color 0.2s ease;
-}
+	.index-title {
+		font-weight: normal;
+		font-size: 1rem;
+		transition: color 0.2s ease;
+	}
 
-.index-date {
-	color: var(--color-text-muted);
-	font-size: 0.9rem;
-	white-space: nowrap;
-	flex-shrink: 0;
-	transition: color 0.2s ease;
-}
+	.index-date {
+		color: var(--color-text-muted);
+		font-size: 0.9rem;
+		white-space: nowrap;
+		flex-shrink: 0;
+		transition: color 0.2s ease;
+	}
 </style>

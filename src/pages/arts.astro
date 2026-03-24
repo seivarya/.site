@@ -17,12 +17,17 @@ const notes = [
 <Home>
 	<h1 class="page-title">arts</h1>
 	<p class="page-subtitle">
-		things i've drawn / tried to draw over the years. it's not some "hobby"
-		i just picked it on a whim so don't expect anything fancy.
+		things i've drawn / tried to draw over the years. it's not some
+		"hobby" i just picked it on a whim so don't expect anything
+		fancy.
 	</p>
 
 	<div class="list-container">
-		{notes.map((post) => <ArtBox title={post.title} link={post.link} />)}
+		{
+			notes.map((post) => (
+				<ArtBox title={post.title} link={post.link} />
+			))
+		}
 	</div>
 </Home>
 
