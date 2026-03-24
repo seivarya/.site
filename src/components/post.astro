@@ -1,0 +1,35 @@
+<!-- structure of the <post> content -->
+
+---
+import Header from "./header.astro";
+import Home from "../layouts/home.astro";
+
+const { data, content } = Astro.props;
+const Content = content;
+console.log(data);
+---
+
+
+<div class="post-container">
+	<Home>
+		<h2 class="post-heading"> { data.title } </h2>
+	</Home>
+
+</div>
+
+<style>
+
+.post-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 800px;
+	height: auto;
+	justify-content: center;
+	text-align: center;
+}
+
+.post-heading {
+
+}
+
+</style>
