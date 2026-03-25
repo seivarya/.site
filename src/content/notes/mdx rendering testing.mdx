@@ -1,0 +1,84 @@
+---
+title: "MDX Override Test Post"
+date: 2026-03-25
+description: "A full test covering all MDX override components."
+---
+
+# Heading 1 — Main Title
+
+this is a basic paragraph to test how your custom `p` component renders.  
+this line should break if you're using `white-space: pre-line`.
+
+---
+
+## Heading 2 — Section Title
+
+this paragraph includes a [custom link](https://example.com) to test your `a` override.
+
+also testing **bold text** and *emphasized text* inside the same paragraph.
+
+---
+
+### Heading 3 — Subsection
+
+you can also mix `inline code` inside text to see how your `code` override behaves.
+
+---
+
+#### Heading 4
+
+more text here just to fill space and observe spacing, margins, and typography consistency.
+
+---
+
+##### Heading 5
+
+another paragraph. nothing special. just making sure all heading levels render correctly.
+
+---
+
+###### Heading 6
+
+final heading level. if this looks weird, your CSS probably needs adjustment.
+
+---
+
+## Blockquote Test
+
+> this is a blockquote  
+> it should use your custom `blockquote` component  
+> and ideally look visually distinct
+
+---
+
+## Code Block Test
+
+```js
+function greet(name) {
+	console.log("hello " + name);
+}
+
+greet("seivarya");
+```
+
+---
+
+##  what this tests (quick checklist)
+
+when you render this, verify:
+
+- headings (`h1–h6`) → all styled correctly
+- paragraphs (`p`) → spacing + line breaks
+- links (`a`) → custom style applied
+- bold (`strong`) → working
+- italic (`em`) → working
+- inline code (`code`) → different from block
+- code blocks (`pre`) → layout correct
+- blockquote → visually distinct
+- image (`img`) → styled properly
+- hr → visible and styled
+
+---
+
+if something looks off, tell me what broke —  
+i can pinpoint exactly which override is causing it.

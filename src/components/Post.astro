@@ -1,16 +1,19 @@
 ---
 import Header from "./Header.astro";
 import Home from "../layouts/home.astro";
+import { mdxOverrides } from "./mdx/Overrides";
 
 const { data, content } = Astro.props;
 const Content = content;
-console.log(data);
 ---
 
 <!-- structure of the <post> content -->
 <div class="post-container">
 	<Home>
 		<h2 class="post-heading">{data.title}</h2>
+		<article class="post-data">
+			<Content components={mdxOverrides}/>
+		</article>
 	</Home>
 </div>
 
@@ -21,9 +24,12 @@ console.log(data);
 		max-width: 800px;
 		height: auto;
 		justify-content: center;
-		text-align: center;
+	}
+	.post-data {
+		color: var(--color-text-primary);
 	}
 
 	.post-heading {
+		color: var(--color-text-main);
 	}
 </style>
