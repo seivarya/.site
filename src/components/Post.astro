@@ -2,6 +2,7 @@
 import Header from "./Header.astro";
 import Home from "../layouts/home.astro";
 import { mdxOverrides } from "./mdx/Overrides";
+import "../styles/mdx.css";
 
 const { data, content } = Astro.props;
 const Content = content;
@@ -12,7 +13,7 @@ const Content = content;
 	<Home>
 		<h2 class="post-heading">{data.title}</h2>
 		<article class="post-data">
-			<Content components={mdxOverrides}/>
+			<Content components={mdxOverrides} />
 		</article>
 	</Home>
 </div>
