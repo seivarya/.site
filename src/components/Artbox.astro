@@ -2,12 +2,13 @@
 const { title, link } = Astro.props;
 ---
 
-<a class="img-container" href={link.src} target="_blank">
-	<img class="img" src={link.src} alt={link.src} />
+<div class="img-container" href={link} target="_blank">
+	<img class="img" src={link} alt={link} />
+
 	<div class="img-footer">
 		<p class="img-title">{title}</p>
 	</div>
-</a>
+</div>
 
 <style>
 	a {
@@ -21,9 +22,10 @@ const { title, link } = Astro.props;
 		max-width: 800px;
 		text-decoration: none;
 	}
+
 	.img {
 		border: 1.3px solid gray;
-		width: 570px;
+		width: 770px;
 		height: auto;
 		max-width: 100%;
 
@@ -49,7 +51,7 @@ const { title, link } = Astro.props;
 
 	@media (max-width: 900px) {
 		.img {
-			width: 300px;
+			width: 400px;
 			height: auto;
 		}
 	}

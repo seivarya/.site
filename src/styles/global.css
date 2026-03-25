@@ -37,13 +37,11 @@ body {
     min-height: 100vh;
     background-color: var(--color-bg);
     color: var(--color-text-primary);
-    /* Dullish base color */
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "SauceCodeProNFM", sans-serif;
 
-    /* Prevent text selection globally */
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -57,6 +55,5 @@ a {
 @media (max-width: 768px) {
     html {
         font-size: 15px;
-        /* Default is usually 16px, this makes all rem-based sizes smaller */
     }
 }

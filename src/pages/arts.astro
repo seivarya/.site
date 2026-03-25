@@ -2,14 +2,13 @@
 import Home from "../layouts/home.astro";
 import ArtBox from "../components/Artbox.astro";
 
-// art images imports
-
+// art imports
 import devilman from "../content/arts/devilman_crybaby.png";
 
-const notes = [
+const images = [
 	{
 		title: "mike makimura from devilman crybaby",
-		link: devilman,
+		link: devilman.src,
 	},
 ];
 ---
@@ -25,30 +24,33 @@ const notes = [
 
 	<div class="list-container">
 		{
-			notes.map((post) => (
-				<ArtBox title={post.title} link={post.link} />
-			))
+		images.map((art) => (
+		<ArtBox title={art.title} link={art.link} />
+		))
 		}
 	</div>
 </Home>
 
 <style>
-	.page-title {
-		font-size: 1.5rem;
-		margin: 0;
-		color: var(--color-text-main);
-	}
+.page-title {
+	font-size: 1.5rem;
+	margin: 0;
+	color: var(--color-text-main);
+}
 
-	.page-subtitle {
-		font-size: 1.1rem;
-		color: var(--color-text-muted);
-		margin-top: 15px;
-		margin-bottom: 40px;
-	}
+.page-subtitle {
+	font-size: 1.1rem;
+	color: var(--color-text-muted);
+	margin-top: 15px;
+	margin-bottom: 40px;
+}
 
-	.list-container {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-	}
+.list-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+
+
 </style>
