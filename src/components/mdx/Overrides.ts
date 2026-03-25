@@ -1,6 +1,6 @@
 // for basic styling /styles/mdx.css will do just fine! but when implementing things such
 // as custom components, lazy loading this mdx/ components override is required otherwise 
-// its just overengineering things
+// its just overengineering things (i dont think i'll use them for now)
 
 import BlockQuote from './BlockQuote.astro';
 import Bold from './Bold.astro';
@@ -13,13 +13,11 @@ import Heading4 from './Heading4.astro';
 import Heading5 from './Heading5.astro';
 import Heading6 from './Heading6.astro';
 import HyprLink from './HyprLink.astro';
-import Img from './Img.astro';
 import InlineCode from './InlineCode.astro';
 import Para from './Para.astro';
 import ThematicBreak from './ThematicBreak.astro';
 
 export const mdxOverrides = {
-	// a: HyprLink,
 	blockquote: BlockQuote,
 	em: Emphasis,
 	h1: Heading1,
@@ -29,9 +27,4 @@ export const mdxOverrides = {
 	h5: Heading5,
 	h6: Heading6,
 	hr: ThematicBreak,
-	img: Img,
-	// p: Para,
-	// pre: CodeBlock, // Removing this fixes the extra newlines!
-	// code: InlineCode, // Removing this fixes the quotation marks " " issue!
-	// strong: Bold,
 };

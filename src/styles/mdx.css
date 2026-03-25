@@ -78,7 +78,7 @@
 .post-data code {
     background: var(--color-bg);
     padding: 0.2em 0.4em;
-    border-radius: 0;
+    border-radius: 0px;
     font-size: 0.85em;
     color: var(--color-text-main);
     font-family: "SauceCodeProNFM", monospace;
@@ -86,8 +86,8 @@
 
 /* Code Blocks */
 .post-data pre {
-    border: 1px solid var(--color-border);
-    border-radius: 0;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
     text-wrap: balance;
     padding: 1.2em;
     overflow-x: auto;

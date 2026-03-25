@@ -33,7 +33,7 @@ loading `<script>` meaning, it separates the hydration of components resulting
 in faster and smoother pages unlike *progressive hydration* which is one 
 single `<script>` with gradual hydration. (both are very different)
 
-> add diagrams for island architecture & progressive hydration
+![island architecture](../content.assets/island_architecture.png)
 
 this makes the island architecture very different from progressive hydration.
 it doesn't require top down rendering! since each component is isolated unit
@@ -53,15 +53,14 @@ and to turn any of the static UI component into an interactive island we just ne
 a `client:*` directive. after this, astro builds and bundles your 
 client side js for optimized perf.
 ```js
-// initially
-<button /> // this is just a stripped js, only html & css version of a component!
-<button client:load/> 
+// initially: standard build output yields pure html
 
-/* 
-now after using the client:* directive we make it interactive and turn it 
-into an *interactive* component and of course the rest of the stuff stays static. 
-pretty neat, right?
-*/
+<button /> // this is just a stripped js, only html & css version of a component!
+
+// with island architecture enabled
+<button client:load /> 
+
+// now after using the client:* directive we make it interactive and turn it into an interactive component and of course the rest of the stuff stays static. pretty neat, right?
 ```
 
 this *interaction* thingy is configured at the component level [per the docs],
@@ -78,6 +77,15 @@ and dynamic server generated components.
 
 by adding `server:defer` in the component one can make the component as it's own server island.
 this breaks your page into server rendered areas that load parallely instead of sequentially.
+
+```js
+// pages/test.astro
+import Component from "../components/Component.astro";
+
+<p>hello world</p> // this portion renders immediately to usr.
+<Component server:defer/> // this will render independently as a server island and won't block the rest of html from rendering instantly
+```
+
 the architecture of server islands ensures that the components will be cached very aggresively (ofc it 
 also depends on the server config not just the *island*)
 the page displays fallback content instantly and shows the rendered content
@@ -92,11 +100,17 @@ anyway i'll be hosting my portfolio on github pages and they really don't
 have the concept of server side rendering so server islands won't be used.
 only client stuff. (i may or may not write it)
 
+
 ```js 
-// page.astro
+// src/pages/page.astro
 ---
+// this is the component script section, it runs exclusively on the server during build
 import Home from "../../src/layouts/home_page_layout.astro"
 ---
+// your template goes here
+<Home>
+	<p>hello world</p>
+</Home>
 ```
 the information on top of the `.astro` file, included in code fences is called the frontmatter. this data is just 
 javascript section.
@@ -108,11 +122,13 @@ instead of hardcoding the string into the page, one can use `{ }` for dynamic
 content rendering. 
 ```js
 ---
+// define javascript variables here at build time
 const data = "hey, im stupid";
 ---
 <head>
 </head>
 <body>
+	<!-- inject dynamic variables directly into HTML securely -->
 	<h3> { data } </h3> 
 </body>
 ```
@@ -139,6 +155,7 @@ function.
 in my site i was making each "project" as a card with it's title, 
 description, tags, and optional url. so in the component's definition we do:
 ```js
+// destructing the injected data from astro.props
 const { title, description, tags, link } = Astro.props;
 ```
 this catches the bundled data and unpacks it into the variables that 
@@ -149,13 +166,16 @@ type checker and enforce the data definition.
 
 after this in my projects.astro page i just do
 ```js
-{ projects.map(p => {(
+// mapping over a list of projects and rendering a component for each
+{ 
+	projects.map(p => {(
 	<BoxComponent 
-	title = { p.title }
-	description = { p.description }
-	tags = { p.tags }
+		title = { p.title }
+		description = { p.description }
+		tags = { p.tags }
 	 />
-)})}
+	)})
+}
 ```
 
 and we're good to go.
@@ -180,6 +200,23 @@ both of these use:
 
 collections stored locally can use build time loaders like `glob()`, `file()`
 to fetch from `.md`, `.mdx`, `.yaml`, `.json`
+
+```ts
+// Example: src/content.config.ts
+import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+
+const notesCollection = defineCollection({
+	// using the glob loader to fetch all mdx files from our folder!
+	loader: glob({ pattern: "**/*.mdx", base: "./src/content/notes" }),
+	schema: z.object({
+		title: z.string(),
+		date: z.date(),
+	}),
+});
+
+export const collections = { notes: notesCollection };
+```
 
 or you can use custom build time loaders. i don't think i'll look into
 it for now. but i might migrate my `content/` to it later.
@@ -297,6 +334,15 @@ during that delay we briefly see the _placeholder_.
 the `is:inline` directive simply skips that processing step and keeps the script  
 inline in the HTML, so it runs immediately as the page loads and voila!
 
+```html
+<head>
+	<!-- using is:inline tells astro not to bundle this script, it executes instantly the moment the browser reads this line -->
+	<script is:inline>
+		console.log("i execute immediately and fix the clock flicker!");
+	</script>
+</head>
+```
+
 now we're going to move towards customizing `.mdx` files and how we can
 create & pass custom components in it.
 one fairly nice thing i noticed was that if we are using *content
@@ -309,7 +355,8 @@ import { defineCollection, z } from 'astro:content';
 const blogs = defineCollection({
 	schema: z.object({ title: z.string() }),
 	markdown: {
-		format: 'mdx', // treat each .md files in this collections as mdx
+		// treat each pure .md file in this specific collection as full mdx!
+		format: 'mdx', 
 	}
 })
 ```
@@ -322,3 +369,6 @@ there are two primary ways to do this.
 i don't think i want custom jsx components for now so i'll go with overriding
 the mardown generated elements.
 ...
+
+that's it. after this it's just me using antigravity and fixing spelling mistakes in blogs and
+changing theme colors.

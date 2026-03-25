@@ -1,0 +1,51 @@
+---
+title: tablebase
+date: 2024-12-12
+---
+this is one of the most fascinating concepts in chess programming.
+
+but first, you need to know the basic rules of chess. if you don’t, give this a quick 2 minute read: [https://tidasports.com/chess-rules-explained-a-beginners-guide-to-the-chess-game/](https://tidasports.com/chess-rules-explained-a-beginners-guide-to-the-chess-game/)  
+no need to memorize anything. just understand what “chess” actually is.
+
+every player has an elo rating, which is like your marks in school. it defines how good you are.  
+a newbie player has an Elo between 100–1000.  
+an average player falls between 1000–1500.  
+an intermediate player is between 1500–2000.  
+and anyone above 2000 is basically a master or grandmaster. these are the big boys of chess. to beat them, you'd need an elo equal to or higher than theirs (we are not counting flukes here).
+
+now we know humans play chess, but so do computers. and they’re on a level humans can never reach not unless we learn how to sort trillions of possible moves in just a few seconds. to show you how strong computers are: the world’s best human player, "Magnus Carlsen", has an elo of around 2800. impressive, right? well, the world’s best chess engine, stockfish, has a peak performance of around 3700. and this is just when the engine is running locally. add cloud scale compute, and you get performance approaching AlphaZero’s level.
+
+the **tablebase**.
+
+a **tablebase** is a mathematical idea that says _any position with 7 or fewer pieces on the board is a solvable state._  
+what does that mean? looking at all those squares and pieces, you might’ve wondered how many total possibilities exist. every single move creates a new **state**, and every move you _could’ve_ made also leads to a different possible **state**.
+
+suppose you move your pawn one square that’s state x. if instead you move another pawn, that’s a totally different state y. and with each new state, the opponent’s options, possible moves, and tactics all change drastically.
+
+now let’s use some basic permutations and combinations to estimate how many configurations are possible on a chessboard.
+
+#### **static piece arrangement:**  
+
+if we only care about how pieces are placed on the 64 squares, the count is limited. each square can hold 12 possible pieces (6 for each color) or be empty.  
+so that’s 13⁶⁴. it looks insanely huge, but the number drops fast once we eliminate impossible or invalid configurations.  
+fun fact: there are board setups you can _never_ reach in a real game — they’re invalid. you can create one on [lichess.org](https://lichess.org/editor) and play
+around with it.
+
+#### **dynamic game state:** 
+
+now, if we include extra information like whose turn it is, castling rights, en passant, move counters, and repetition history — the number of 
+probabilities spike up.  
+does that make it infinite? no, but it makes the number unbelievably large.  
+even though the set of possible **states** isn’t infinite, the number of possible **games** is unbounded, because you can repeat non terminal states indefinitely without triggering the 50 move draw rule.
+
+think about this. suppose you move a pawn. that single move creates a new branch of possible **states**. take it back and move a different pawn that’s another completely different branch.  
+you might say this just makes the number larger, not infinite, but here’s the twist:  
+each move creates a _new set_ of an insanely large number of states. every move branches into new sets, and those branches can loop back, creating even more new sets from each loop. and that process never truly stops.
+
+that’s why chess engines have a concept of **depth**.  
+when you see an engine running at “depth 26” it means that the engine explores the game tree 26 levels deep (13 for each side) and then picks the best move for its side.  
+(how it decides which is the best move is a whole another story.)  
+even then, the engine doesn’t explore the _full_ tree.
+the average branching factor in chess is around 35, and no computer in the world can represent 35^26 positions. engines use techniques like **search pruning** to optimize their search, but as of now, ~3700 Elo is the best we can achieve.
+
+\<incomplete>

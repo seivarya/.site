@@ -7,7 +7,7 @@ const posts = await getCollection("notes");
 ---
 
 <Home>
-	<h1 class="page-title">posts</h1>
+	<h1 class="page-title">notes</h1>
 	<p class="page-subtitle">
 		technical learnings, blogs, tutorials and deep dives.
 	</p>
@@ -19,6 +19,7 @@ const posts = await getCollection("notes");
 					title={post.data.title}
 					date={post.data.date}
 					slug={post.id}
+					collection="notes"
 				/>
 			))
 		}

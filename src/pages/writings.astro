@@ -1,13 +1,9 @@
 ---
 import Home from "../layouts/home.astro";
 import CleanIndex from "../components/CleanIndex.astro";
-const writings = [
-	{
-		title: "hello world: setting up the new minimal site",
-		date: "20-03-2026",
-		link: "/",
-	},
-];
+import { getCollection } from "astro:content";
+
+const writings = await getCollection("writings");
 ---
 
 <Home>
@@ -18,11 +14,12 @@ const writings = [
 
 	<div class="list-container">
 		{
-			writings.map((post) => (
+			writings.map((write) => (
 				<CleanIndex
-					title={post.title}
-					date={post.date}
-					link={post.link}
+					title={write.data.title}
+					date={write.data.date}
+					slug={write.id}
+					collection="writings"
 				/>
 			))
 		}

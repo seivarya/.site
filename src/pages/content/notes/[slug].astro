@@ -1,27 +1,28 @@
 ---
 import Post from "../../../components/Post.astro";
-import { render, getEntry, getCollection } from 'astro:content';
+import { render, getEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('notes');
-
-	return posts.map((post) => ({
-		params: { slug: post.id },
-	}));
+	const posts = await getCollection("notes");
+	return posts.map((post) => {
+		return {
+			params: { slug: post.id },
+			props: { post },
+		};
+	});
 }
 
 const { slug } = Astro.params;
-
-const post = await getEntry('notes', slug);
+const post = await getEntry("notes", slug);
 
 if (!post) {
-	throw new Error('post not found!');
+	throw new Error("post not found!");
 }
 
-// content is written data, headings is just the main <heading> and remarkPluginFrontmatter is the frontmatter 
+// content is written data, headings is just the main <heading> and remarkPluginFrontmatter is the frontmatter
 // data in post.. having stuff like date & title
 
-const { Content, headings, remarkPluginFrontmatter } = await render(post); 
+const { Content, headings, remarkPluginFrontmatter } = await render(post);
 ---
 
-<Post content={Content} data={post.data}/>
+<Post content={Content} data={post.data} />

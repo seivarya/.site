@@ -1,8 +1,8 @@
 ---
-const { title, date, slug } = Astro.props;
+const { title, date, slug, collection } = Astro.props;
 ---
 
-<a href={`/content/notes/${slug}`} class="clean-index">
+<a href={`/content/${collection}/${slug}`} class="clean-index">
 	<span class="index-title">{title}</span>
 	<span class="index-date">{date}</span>
 </a>

@@ -1,0 +1,25 @@
+---
+import Post from "../../../components/Post.astro";
+import { render, getEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+        const posts = await getCollection("writings");
+        return posts.map((post) => {
+                return {
+                        params: { slug: post.id },
+                        props: { post },
+                };
+        });
+}
+
+const { slug } = Astro.params;
+const post = await getEntry("writings", slug);
+
+if (!post) {
+        throw new Error("post not found!");
+}
+
+const { Content } = await render(post);
+---
+
+<Post content={Content} data={post.data} />
