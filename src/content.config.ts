@@ -18,16 +18,8 @@ const notes = defineCollection({
 	}),
 });
 
-const arts = defineCollection({
-	loader: glob({ base: './src/content/arts', pattern: '**/*.mdx' }),
-	schema: z.object({
-		title: z.string().optional(),
-		date: z.coerce.date().transform((d) => d.toISOString().split('T')[0]).optional(),
-	}),
-});
 
 export const collections = {
 	writings,
 	notes,
-	arts,
 };

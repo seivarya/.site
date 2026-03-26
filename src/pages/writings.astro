@@ -3,13 +3,28 @@ import Home from "../layouts/home.astro";
 import CleanIndex from "../components/CleanIndex.astro";
 import { getCollection } from "astro:content";
 
-const writings = await getCollection("writings");
+function compareFn(obj1, obj2) {
+	if (obj1.data.date < obj2.data.date) {
+		return 1;
+
+	} else if (obj1.data.date > obj2.data.date) {
+		return -1;
+
+	} else {
+		return 0;
+
+	}
+}
+
+const objects = await getCollection("writings");
+const writings = objects.sort(compareFn);
+
 ---
 
 <Home>
 	<h1 class="page-title">writings</h1>
 	<p class="page-subtitle">
-		personal thoughts (don't take them seriously)
+		personal thoughts.
 	</p>
 
 	<div class="list-container">
