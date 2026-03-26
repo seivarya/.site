@@ -6,9 +6,7 @@ import Socials from "../components/Socials.astro";
 <Home>
 	<section class="profile-section">
 		<div class="name-container">
-			<h1 class="author-name">
-				<a class="author-name" href="/">seivarya</a>
-			</h1>
+			<p class="author-name">seivarya</p>
 			<a class="author-role" href="/">backend developer</a>
 		</div>
 	</section>
@@ -25,9 +23,9 @@ import Socials from "../components/Socials.astro";
 
 		<div class="tech-stack-section">
 			<span>c</span> | <span>python</span> | <span
-			>node.js</span
+				>node.js</span
 			> | <span>git</span> | <span>neovim</span> | <span
-			>arch</span
+				>arch</span
 			>
 			<br /><br /><br />
 		</div>
@@ -44,7 +42,7 @@ import Socials from "../components/Socials.astro";
 			active on most of them (because i have a life) you’ll get
 			the fastest response from <a
 				href="https://discord.com/users/1345276369566699530"
-			>discord</a
+				>discord</a
 			>.
 			<br /><br />
 			this site was mostly created by me but i took some design
@@ -58,83 +56,98 @@ import Socials from "../components/Socials.astro";
 </Home>
 
 <style>
-.contact-section {
-	margin-bottom: 40px;
-}
-a {
-	color: unset;
-}
-.contact-section a {
-	color: var(--color-text-muted);
-	text-decoration: none;
-	border-bottom: 1px solid var(--color-border);
-	transition:
-		color 0.2s,
-		border-color 0.2s;
-	padding-bottom: 2px;
-}
-.contact-section a:hover {
-	color: var(--color-text-hover);
-	border-bottom-color: var(--color-text-hover);
-}
-.about-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
+	.contact-section {
+		margin-bottom: 40px;
+	}
+	a {
+		color: unset;
+	}
+	.contact-section a,
+	.contact-section a:visited,
+	.contact-section a:active {
+		color: var(--color-text-muted);
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 4px;
+		transition:
+			color 0.2s,
+			text-decoration-color 0.2s;
+		padding-bottom: 2px;
+	}
+	.contact-section a:hover,
+	.contact-section a:focus {
+		color: var(--color-text-hover);
+		text-decoration-color: var(--color-text-hover);
+	}
+	.about-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-.tech-stack-section {
-	color: var(--color-text-muted);
-	margin-top: 1px;
-	text-align: left;
-}
+	.tech-stack-section {
+		color: var(--color-text-muted);
+		margin-top: 1px;
+		text-align: left;
+	}
 
-.tech-stack-section span:hover {
-	color: var(--color-text-main);
-}
-.profile-section {
-	display: flex;
-	gap: 16px;
-}
-.name-container {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-.author-name {
-	margin: 0;
-	font-weight: bold;
-	text-decoration: none;
-	font-size: 1.5rem;
-	color: var(--color-text-main);
-	letter-spacing: 0.5px;
-}
-.author-name:hover {
-	transform: scale(1.1);
-}
-.author-role {
-	margin-top: 13px;
-	width: fit-content;
-	text-decoration: none;
-	border-bottom: 1px solid var(--color-border);
-	color: var(--color-text-muted);
-	font-weight: 300;
-	font-size: 1.1rem;
-	cursor: context-menu;
-}
-.author-role:hover {
-	color: var(--color-text-main);
-}
+	.tech-stack-section span:hover {
+		color: var(--color-text-main);
+	}
+	.profile-section {
+		display: flex;
+		gap: 16px;
+	}
+	.name-container {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.author-name {
+		margin: 0;
+		font-weight: bold;
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 4px;
+		transition:
+			text-decoration-color 0.2s,
+			transform 0.2s;
+		font-size: 1.5rem;
+		color: var(--color-text-main);
+		letter-spacing: 0.5px;
+		display: inline-block;
+		will-change: transform;
+	}
+	.author-name:hover {
+		transform: scale(1.1);
+		text-decoration-color: var(--color-text-hover);
+	}
+	.author-role {
+		margin-top: 13px;
+		width: fit-content;
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 4px;
+		color: var(--color-text-muted);
+		font-weight: 300;
+		font-size: 1.1rem;
+		cursor: context-menu;
+		transition: color 0.2s ease;
+	}
+	.author-role:hover {
+		color: var(--color-text-main);
+		text-decoration-color: var(--color-text-main);
+	}
 
-.intro-section {
-	margin-top: 20px;
-	line-height: 1.7;
-	color: var(--color-text-muted);
-	width: 100%;
-	margin-bottom: 0px;
-}
-.intro-section p {
-	margin: 0;
-}
+	.intro-section {
+		margin-top: 20px;
+		line-height: 1.7;
+		color: var(--color-text-muted);
+		width: 100%;
+		margin-bottom: 0px;
+	}
+	.intro-section p {
+		margin: 0;
+	}
 </style>

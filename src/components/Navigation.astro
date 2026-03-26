@@ -22,36 +22,25 @@
 	}
 
 	/*  i have no idea what is this  */
-	.nav-bar a {
+	.nav-bar a,
+	.nav-bar a:visited,
+	.nav-bar a:active {
 		position: relative;
 		display: inline-block;
 		color: var(--color-text-muted);
-		text-decoration: none;
-		padding-bottom: 4px;
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 4px;
 		text-align: center;
-		transition: color 0.25s ease;
+		transition:
+			color 0.25s ease,
+			text-decoration-color 0.25s ease;
 	}
 
-	.nav-bar a::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		height: 1px;
-		background: var(--color-border);
-		transform: scaleX(0.8);
-		transform-origin: center;
-		transition: all 0.25s ease;
-	}
-
-	.nav-bar a:hover {
+	.nav-bar a:hover,
+	.nav-bar a:focus {
 		color: var(--color-text-main);
-	}
-
-	.nav-bar a:hover::after {
-		background: var(--color-text-main);
-		transform: scaleX(1.1);
+		text-decoration-color: var(--color-text-main);
 	}
 
 	@media (max-width: 900px) {

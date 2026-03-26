@@ -38,17 +38,20 @@
 }
 
 /* Links */
-.post-data a {
+.post-data a,
+.post-data a:visited,
+.post-data a:active {
     color: var(--color-text-hover);
     text-decoration: underline;
     text-decoration-color: var(--color-border);
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
     cursor: pointer;
 }
 
-.post-data a:hover {
+.post-data a:hover,
+.post-data a:focus {
     color: var(--color-text-main);
     text-decoration-color: var(--color-text-main);
 }
@@ -110,13 +113,21 @@
     margin: 2.5em 0;
 }
 
-/* Images */
+/* Images & Diagrams */
 .post-data img {
     max-width: 100%;
     height: auto;
     border-radius: 6px;
     margin: 1em 0;
     border: 1px solid var(--color-border);
+}
+
+.post-data .mermaid {
+    max-width: 100%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
 }
 
 /* Lists */

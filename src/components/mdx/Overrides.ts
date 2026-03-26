@@ -13,11 +13,13 @@ import Heading4 from './Heading4.astro';
 import Heading5 from './Heading5.astro';
 import Heading6 from './Heading6.astro';
 import HyprLink from './HyprLink.astro';
+import Img from './Img.astro';
 import InlineCode from './InlineCode.astro';
 import Para from './Para.astro';
 import ThematicBreak from './ThematicBreak.astro';
 
 export const mdxOverrides = {
+	//img: Img,
 	blockquote: BlockQuote,
 	em: Emphasis,
 	h1: Heading1,

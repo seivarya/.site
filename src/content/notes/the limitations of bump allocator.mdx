@@ -56,14 +56,12 @@ memory corruption (which is much worse)
 
 so we've established that in a perfect universe a bump allocator
 can work but the flow will be:
-```mermaid
-graph TD
-    A[allocate mem_x] --> B[allocate mem_y] --> C[use all of them together] --> D[destroy all of them together]
+```text
+[allocate mem_x] --> [allocate mem_y] --> [use all of them together] --> [destroy all of them together]
 ```
 
-```mermaid
-graph TD
-    A[allocate mem_x] --> B[allocate mem_y] --> C[free mem_x] --> D[allocate mem_z] --> E[free mem_y] --> F[allocate mem_w] --> G[free mem_z]
+```text
+[allocate mem_x] --> [allocate mem_y] --> [free mem_x] --> [allocate mem_z] --> [free mem_y] --> [allocate mem_w] --> [free mem_z]
 ```
 
 ### the solution

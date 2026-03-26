@@ -2,15 +2,13 @@
 
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" transition:persist="site-footer">
 	<div class="footer-links">
 		<span>
 			<a href="https://astro.build/" target="_blank">
 				built with astro
 			</a>
 		</span>
-		<span class="dot">-</span>
-		<a href="/rss.xml">rss</a>
 		<span class="dot">-</span>
 		<a href="/sitemap-index.xml">sitemap</a>
 	</div>
@@ -25,11 +23,11 @@
 			</span>
 		</div>
 		<div class="source-code-section">
-			<span
-				><a href="https://github.com/seivarya/"
+			<span>
+				<a href="https://github.com/seivarya/"
 					>source code</a
-				></span
-			>
+				>
+			</span>
 		</div>
 	</div>
 </footer>
@@ -42,7 +40,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 25px;
-		padding-top: 30px;
+		padding-top: 50px;
 		font-family: inherit;
 		font-size: 0.95rem;
 	}
@@ -58,19 +56,23 @@
 		color: var(--color-text-muted);
 	}
 
-	a {
+	a,
+	a:visited,
+	a:active {
 		color: var(--color-text-muted);
-		text-decoration: none;
-		border-bottom: 1px solid var(--color-border);
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 4px;
 		transition:
 			color 0.2s,
-			border-color 0.2s;
+			text-decoration-color 0.2s;
 		padding-bottom: 2px;
 	}
 
-	a:hover {
+	a:hover,
+	a:focus {
 		color: var(--color-text-hover);
-		border-bottom-color: var(--color-text-hover);
+		text-decoration-color: var(--color-text-hover);
 	}
 
 	.copyright {

@@ -17,15 +17,16 @@ const { title, date, slug, collection } = Astro.props;
 		margin: 0px;
 		padding: 16px 0;
 		color: var(--color-text-primary);
-		text-decoration: none;
-		border-bottom: 1px solid var(--color-border);
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 4px;
 		transition:
 			color 0.2s ease,
-			border-color 0.2s ease;
+			text-decoration-color 0.2s ease;
 	}
 
 	.clean-index:hover {
-		border-bottom-color: var(--color-text-hover);
+		text-decoration-color: var(--color-text-hover);
 	}
 
 	.clean-index:hover .index-title,
