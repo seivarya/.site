@@ -1,0 +1,53 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html style="background-color: #111111;">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>404 - Not Found</title>
+		<meta name="theme-color" content="#111111" />
+	</head>
+	<body style="background-color: #111111; margin: 0;">
+		<div class="error-container">
+			<img src="/404.jpg" alt="404" class="error-img" />
+			<a href="/" class="home-link">go back home</a>
+		</div>
+	</body>
+</html>
+
+<style>
+	.error-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+		gap: 20px;
+		background-color: var(--color-bg-main, #111111);
+	}
+
+	.error-img {
+		max-width: 90vw;
+		max-height: 70vh;
+		border-radius: 8px;
+	}
+
+	.home-link {
+		color: var(--color-text-muted, #888);
+		text-decoration: underline;
+		text-decoration-color: var(--color-border, #444);
+		text-underline-offset: 4px;
+		font-family: inherit;
+		transition:
+			color 0.2s,
+			text-decoration-color 0.2s;
+	}
+
+	.home-link:hover {
+		color: var(--color-text-hover, #eee);
+		text-decoration-color: var(--color-text-hover, #eee);
+	}
+</style>
