@@ -108,20 +108,12 @@ import Socials from "../components/Socials.astro";
 		margin: 0;
 		font-weight: bold;
 		text-decoration: underline;
-		text-decoration-color: var(--color-border);
+		text-decoration-color: var(--color-text-hover);
 		text-underline-offset: 4px;
-		transition:
-			text-decoration-color 0.2s,
-			transform 0.2s;
 		font-size: 1.5rem;
 		color: var(--color-text-main);
 		letter-spacing: 0.5px;
 		display: inline-block;
-		will-change: transform;
-	}
-	.author-name:hover {
-		transform: scale(1.1);
-		text-decoration-color: var(--color-text-hover);
 	}
 	.author-role {
 		margin-top: 13px;

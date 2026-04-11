@@ -3,55 +3,13 @@
 ---
 
 <nav class="nav-bar">
-	<a href="/" data-astro-prefetch="hover">home</a>
-	<a href="/projects" data-astro-prefetch="visible">projects</a>
-	<a href="/notes" data-astro-prefetch="hover">notes</a>
-	<a href="/writings" data-astro-prefetch="visible">writings</a>
-	<a href="/arts" data-astro-prefetch="hover">arts</a>
+	<div class="nav-row">
+		<a href="/">home</a>
+		<a href="/projects" data-astro-prefetch="hover">projects</a>
+		<a href="/notes" data-astro-prefetch="hover">notes</a>
+	</div>
+	<div class="nav-row">
+		<a href="/writings" data-astro-prefetch="hover">writings</a>
+		<a href="/arts" data-astro-prefetch="hover">arts</a>
+	</div>
 </nav>
-
-<style>
-	.nav-bar {
-		display: flex;
-		align-items: center;
-		gap: 50px;
-		margin-top: 40px;
-		margin-bottom: 30px;
-		width: fit-content;
-		flex-wrap: wrap;
-	}
-
-	/*  i have no idea what is this  */
-	.nav-bar a,
-	.nav-bar a:visited,
-	.nav-bar a:active {
-		position: relative;
-		display: inline-block;
-		color: var(--color-text-muted);
-		text-decoration: underline;
-		text-decoration-color: var(--color-border);
-		text-underline-offset: 4px;
-		text-align: center;
-		transition:
-			color 0.25s ease,
-			text-decoration-color 0.25s ease;
-	}
-
-	.nav-bar a:hover,
-	.nav-bar a:focus {
-		color: var(--color-text-main);
-		text-decoration-color: var(--color-text-main);
-	}
-
-	@media (max-width: 900px) {
-		.nav-bar {
-			justify-content: center; /* centers under pfp */
-			gap: 22px;
-			margin-top: 10px;
-		}
-
-		.nav-bar a {
-			min-width: 70px;
-		}
-	}
-</style>

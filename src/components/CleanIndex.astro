@@ -16,7 +16,7 @@ const { title, date, slug, collection } = Astro.props;
 		gap: 17px;
 		margin: 0px;
 		padding: 16px 0;
-		color: var(--color-text-primary);
+		color: var(--color-text-muted);
 		text-decoration: underline;
 		text-decoration-color: var(--color-border);
 		text-underline-offset: 4px;
@@ -26,6 +26,7 @@ const { title, date, slug, collection } = Astro.props;
 	}
 
 	.clean-index:hover {
+		color: var(--color-text-hover);
 		text-decoration-color: var(--color-text-hover);
 	}
 
