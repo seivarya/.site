@@ -27,4 +27,5 @@ export default defineConfig({
 
   adapter: cloudflare(),
   prefetch: true,
+  output: 'static',
 });
