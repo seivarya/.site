@@ -3,49 +3,49 @@ const { title, date, slug, collection } = Astro.props;
 ---
 
 <a href={`/content/${collection}/${slug}`} class="clean-index">
-	<span class="index-title">{title}</span>
-	<span class="index-date">{date}</span>
+        <span class="index-title">{title}</span>
+        <span class="index-date">{date}</span>
 </a>
 
 <style>
-	.clean-index {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		gap: 17px;
-		margin: 0px;
-		padding: 16px 0;
-		color: var(--color-text-muted);
-		text-decoration: underline;
-		text-decoration-color: var(--color-border);
-		text-underline-offset: 4px;
-		transition:
-			color 0.2s ease,
-			text-decoration-color 0.2s ease;
-	}
+        .clean-index {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 17px;
+                margin: 0px;
+                padding: 16px 0;
+                color: var(--color-text-muted);
+                text-decoration: underline;
+                text-decoration-color: var(--color-border);
+                text-underline-offset: 4px;
+                transition:
+                        color 0.2s ease,
+                        text-decoration-color 0.2s ease;
+        }
 
-	.clean-index:hover {
-		color: var(--color-text-hover);
-		text-decoration-color: var(--color-text-hover);
-	}
+        .clean-index:hover {
+                color: var(--color-text-hover);
+                text-decoration-color: var(--color-text-hover);
+        }
 
-	.clean-index:hover .index-title,
-	.clean-index:hover .index-date {
-		color: var(--color-text-main);
-	}
+        .clean-index:hover .index-title,
+        .clean-index:hover .index-date {
+                color: var(--color-text-main);
+        }
 
-	.index-title {
-		font-weight: normal;
-		font-size: 1rem;
-		transition: color 0.2s ease;
-	}
+        .index-title {
+                font-weight: normal;
+                font-size: 1rem;
+                transition: color 0.2s ease;
+        }
 
-	.index-date {
-		color: var(--color-text-muted);
-		font-size: 0.9rem;
-		white-space: nowrap;
-		flex-shrink: 0;
-		transition: color 0.2s ease;
-	}
+        .index-date {
+                color: var(--color-text-muted);
+                font-size: 0.9rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+                transition: color 0.2s ease;
+        }
 </style>

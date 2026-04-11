@@ -1,134 +1,134 @@
 @font-face {
-    font-family: SauceCodeProNFM;
-    src: url("/fonts/SauceCodeProNFM.woff2");
-    font-display: swap;
+        font-family: SauceCodeProNFM;
+        src: url("/fonts/SauceCodeProNFM.woff2");
+        font-display: swap;
 }
 
 html {
-    overflow-y: scroll;
-    /* Force vertical scrollbar track constantly so long notes don't shift layout */
-    background-color: #111111;
-    color: #dbdbdb;
+        overflow-y: scroll;
+        /* Force vertical scrollbar track constantly so long notes don't shift layout */
+        background-color: #111111;
+        color: #dbdbdb;
 }
 
 :root {
-    /* if you want to change the theme of site, configure this palatte using gpitty (coz i know you won't do it manually) */
-    --color-bg: #111111;
-    --color-text-main: #ffffff;
-    --color-text-primary: #dbdbdb;
-    --color-text-muted: #999999;
-    --color-text-hover: #f4f4f4;
-    --color-border: #333333;
-    --color-bg-alt: #1a1a1a;
+        /* if you want to change the theme of site, configure this palatte using gpitty (coz i know you won't do it manually) */
+        --color-bg: #111111;
+        --color-text-main: #ffffff;
+        --color-text-primary: #dbdbdb;
+        --color-text-muted: #999999;
+        --color-text-hover: #f4f4f4;
+        --color-border: #333333;
+        --color-bg-alt: #1a1a1a;
 
-    --color-tech-stack: #999999;
-    --color-tech-stack-span: #e0e0e0;
-    --color-loading: #ffffff;
+        --color-tech-stack: #999999;
+        --color-tech-stack-span: #e0e0e0;
+        --color-loading: #ffffff;
 
-    --color-brand-github: #ffffff;
-    --color-brand-twitter: #ffffff;
-    --color-brand-linkedin: #0077b5;
-    --color-brand-telegram: #2AABEE;
-    --color-brand-discord: #5865F2;
-    --color-brand-bluesky: #1185fe;
-    --color-brand-email: yellow;
-    --color-brand-spotify: green;
+        --color-brand-github: #ffffff;
+        --color-brand-twitter: #ffffff;
+        --color-brand-linkedin: #0077b5;
+        --color-brand-telegram: #2aabee;
+        --color-brand-discord: #5865f2;
+        --color-brand-bluesky: #1185fe;
+        --color-brand-email: yellow;
+        --color-brand-spotify: green;
 }
 
 body {
-    margin: 0;
-    min-height: 100dvh;
-    overflow-x: hidden;
-    background-color: var(--color-bg);
-    color: var(--color-text-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "SauceCodeProNFM", sans-serif;
-    font-weight: 400;
+        margin: 0;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        background-color: var(--color-bg);
+        color: var(--color-text-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "SauceCodeProNFM", sans-serif;
+        font-weight: 400;
 
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
 }
 
 a {
-    cursor: default;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
+        cursor: default;
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
 }
 
 @media (max-width: 768px) {
-    html {
-        font-size: 15px;
-    }
+        html {
+                font-size: 15px;
+        }
 }
 
 .nav-bar {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    width: fit-content;
-    flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        width: fit-content;
+        flex-wrap: wrap;
 }
 
 .nav-row {
-    display: contents;
+        display: contents;
 }
 
 .nav-bar a,
 .nav-bar a:visited,
 .nav-bar a:active {
-    position: relative;
-    display: inline-block;
-    color: var(--color-text-muted);
-    text-decoration: none;
-    text-align: center;
-    transition: color 0.25s ease;
+        position: relative;
+        display: inline-block;
+        color: var(--color-text-muted);
+        text-decoration: none;
+        text-align: center;
+        transition: color 0.25s ease;
 }
 
 .nav-bar a::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: var(--color-border);
-    transition:
-        left 0.25s ease,
-        right 0.25s ease,
-        background-color 0.25s ease;
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: var(--color-border);
+        transition:
+                left 0.25s ease,
+                right 0.25s ease,
+                background-color 0.25s ease;
 }
 
 .nav-bar a:hover,
 .nav-bar a:focus {
-    color: var(--color-text-main);
+        color: var(--color-text-main);
 }
 
 .nav-bar a:hover::after,
 .nav-bar a:focus::after {
-    left: -6px;
-    right: -6px;
-    background-color: var(--color-text-main);
+        left: -6px;
+        right: -6px;
+        background-color: var(--color-text-main);
 }
 
 @media (max-width: 900px) {
-    .nav-bar {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        justify-content: flex-end;
-        margin-top: 10px;
-    }
+        .nav-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+                justify-content: flex-end;
+                margin-top: 10px;
+        }
 
-    .nav-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-    }
+        .nav-row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+        }
 }

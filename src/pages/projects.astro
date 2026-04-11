@@ -3,114 +3,114 @@ import Home from "../layouts/home.astro";
 import ProjectBox from "../components/ProjectBox.astro";
 
 const projects = [
-	{
-		title: "tinyweb",
-		description: "a web server built from scratch.",
-		tags: ["c", "webserver", "sockets"],
-		link: "https://github.com/seivarya/tinyweb",
-	},
-	{
-		title: "rvlib",
-		description: "a data structures library with type descriptors.",
-		tags: ["c", "generics", "abstraction"],
-		link: "https://github.com/seivarya/rvlib",
-	},
-	{
-		title: "alloc",
-		description: "a simple custom memory allocator.",
-		tags: ["c", "memory-management"],
-		link: "https://github.com/seivarya/alloc",
-	},
-	{
-		title: "dsa",
-		description: "practicing data structures and algorithms.",
-		tags: ["c"],
-		link: "https://github.com/seivarya/dsa",
-	},
-	{
-		title: "autoLinkedIn",
-		description:
-			"a python script to automate sending linkedin connection requests.",
-		tags: ["python", "automation"],
-		link: "https://github.com/seivarya/autoLinkedIn",
-	},
-	{
-		title: "dilemma",
-		description: "a simulation of the prisoner's dilemma game.",
-		tags: ["python", "simulation"],
-		link: "https://github.com/seivarya/dilemma",
-	},
-	{
-		title: "ospirity",
-		description: "a simple discord bot for utility and moderation.",
-		tags: ["python", "discord.py"],
-		link: "https://github.com/seivarya/ospirity",
-	},
-	{
-		title: "neuralnet",
-		description:
-			"a simple neural network in lua that learns the XOR operation.",
-		tags: ["lua", "neural-network"],
-		link: "https://github.com/seivarya/neuralnet",
-	},
-	{
-		title: "kioto",
-		description: "a custom neovim theme built with lush.nvim.",
-		tags: ["lua", "neovim", "theme"],
-		link: "https://github.com/seivarya/kioto",
-	},
-	{
-		title: "yt.themes",
-		description:
-			"custom visuals and css theme for the youtube music desktop app.",
-		tags: ["css", "theme"],
-		link: "https://github.com/seivarya/yt.themes",
-	},
+        {
+                title: "tinyweb",
+                description: "a web server built from scratch.",
+                tags: ["c", "webserver", "sockets"],
+                link: "https://github.com/seivarya/tinyweb",
+        },
+        {
+                title: "rvlib",
+                description: "a data structures library with type descriptors.",
+                tags: ["c", "generics", "abstraction"],
+                link: "https://github.com/seivarya/rvlib",
+        },
+        {
+                title: "alloc",
+                description: "a simple custom memory allocator.",
+                tags: ["c", "memory-management"],
+                link: "https://github.com/seivarya/alloc",
+        },
+        {
+                title: "dsa",
+                description: "practicing data structures and algorithms.",
+                tags: ["c"],
+                link: "https://github.com/seivarya/dsa",
+        },
+        {
+                title: "autoLinkedIn",
+                description:
+                        "a python script to automate sending linkedin connection requests.",
+                tags: ["python", "automation"],
+                link: "https://github.com/seivarya/autoLinkedIn",
+        },
+        {
+                title: "dilemma",
+                description: "a simulation of the prisoner's dilemma game.",
+                tags: ["python", "simulation"],
+                link: "https://github.com/seivarya/dilemma",
+        },
+        {
+                title: "ospirity",
+                description: "a simple discord bot for utility and moderation.",
+                tags: ["python", "discord.py"],
+                link: "https://github.com/seivarya/ospirity",
+        },
+        {
+                title: "neuralnet",
+                description:
+                        "a simple neural network in lua that learns the XOR operation.",
+                tags: ["lua", "neural-network"],
+                link: "https://github.com/seivarya/neuralnet",
+        },
+        {
+                title: "kioto",
+                description: "a custom neovim theme built with lush.nvim.",
+                tags: ["lua", "neovim", "theme"],
+                link: "https://github.com/seivarya/kioto",
+        },
+        {
+                title: "yt.themes",
+                description:
+                        "custom visuals and css theme for the youtube music desktop app.",
+                tags: ["css", "theme"],
+                link: "https://github.com/seivarya/yt.themes",
+        },
 ];
 ---
 
 <Home>
-	<h1 class="page-title">projects</h1>
-	<p class="page-subtitle">things i've built/ building.</p>
+        <h1 class="page-title">projects</h1>
+        <p class="page-subtitle">things i've built/ building.</p>
 
-	<div class="projects-grid">
-		{
-			projects.map((p) => (
-				<ProjectBox
-					title={p.title}
-					description={p.description}
-					tags={p.tags}
-					link={p.link}
-				/>
-			))
-		}
-	</div>
+        <div class="projects-grid">
+                {
+                        projects.map((p) => (
+                                <ProjectBox
+                                        title={p.title}
+                                        description={p.description}
+                                        tags={p.tags}
+                                        link={p.link}
+                                />
+                        ))
+                }
+        </div>
 </Home>
 
 <style>
-	.page-title {
-		font-size: 1.5rem;
-		margin: 0;
-		color: var(--color-text-main);
-	}
+        .page-title {
+                font-size: 1.5rem;
+                margin: 0;
+                color: var(--color-text-main);
+        }
 
-	.page-subtitle {
-		font-size: 1.1rem;
-		color: var(--color-text-muted);
-		margin-top: 15px;
-		margin-bottom: 40px;
-	}
+        .page-subtitle {
+                font-size: 1.1rem;
+                color: var(--color-text-muted);
+                margin-top: 15px;
+                margin-bottom: 40px;
+        }
 
-	.projects-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 20px;
-		width: 100%;
-	}
+        .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                width: 100%;
+        }
 
-	@media (max-width: 650px) {
-		.projects-grid {
-			grid-template-columns: 1fr;
-		}
-	}
+        @media (max-width: 650px) {
+                .projects-grid {
+                        grid-template-columns: 1fr;
+                }
+        }
 </style>

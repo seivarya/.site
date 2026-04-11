@@ -6,48 +6,48 @@ import ArtBox from "../components/Artbox.astro";
 import devilman from "../content/arts/devilman_crybaby.png";
 
 const images = [
-	{
-		title: "miki makimura from devilman crybaby",
-		link: devilman.src,
-	},
+        {
+                title: "miki makimura from devilman crybaby",
+                link: devilman.src,
+        },
 ];
 ---
 
 <Home>
-	<h1 class="page-title">arts</h1>
-	<p class="page-subtitle">
-		things i've drawn / tried to draw over the years. it's not some
-		"hobby" i just picked it on a whim so don't expect anything
-		fancy. <br /><br />ps: this section is still incomplete i am
-		refining my old drawings a bit for showcasing.
-	</p>
+        <h1 class="page-title">arts</h1>
+        <p class="page-subtitle">
+                things i've drawn / tried to draw over the years. it's not some
+                "hobby" i just picked it on a whim so don't expect anything
+                fancy. <br /><br />ps: this section is still incomplete i am
+                refining my old drawings a bit for showcasing.
+        </p>
 
-	<div class="list-container">
-		{
-			images.map((art) => (
-				<ArtBox title={art.title} link={art.link} />
-			))
-		}
-	</div>
+        <div class="list-container">
+                {
+                        images.map((art) => (
+                                <ArtBox title={art.title} link={art.link} />
+                        ))
+                }
+        </div>
 </Home>
 
 <style>
-	.page-title {
-		font-size: 1.5rem;
-		margin: 0;
-		color: var(--color-text-main);
-	}
+        .page-title {
+                font-size: 1.5rem;
+                margin: 0;
+                color: var(--color-text-main);
+        }
 
-	.page-subtitle {
-		font-size: 1.1rem;
-		color: var(--color-text-muted);
-		margin-top: 15px;
-		margin-bottom: 40px;
-	}
+        .page-subtitle {
+                font-size: 1.1rem;
+                color: var(--color-text-muted);
+                margin-top: 15px;
+                margin-bottom: 40px;
+        }
 
-	.list-container {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-	}
+        .list-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+        }
 </style>

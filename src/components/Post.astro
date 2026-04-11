@@ -9,29 +9,29 @@ const Content = content;
 
 <!-- structure of the <post> content -->
 <Home>
-	<div class="post-container">
-		<h2 class="post-heading">{data.title}</h2>
-		<article class="post-data">
-			<Content components={mdxOverrides} />
-		</article>
-	</div>
+        <div class="post-container">
+                <h2 class="post-heading">{data.title}</h2>
+                <article class="post-data">
+                        <Content components={mdxOverrides} />
+                </article>
+        </div>
 </Home>
 
 <style>
-	.post-container {
-		display: flex;
-		flex-direction: column;
-		max-width: 800px;
-		height: auto;
-		justify-content: center;
-	}
-	.post-data {
-		color: var(--color-text-primary);
-	}
+        .post-container {
+                display: flex;
+                flex-direction: column;
+                max-width: 800px;
+                height: auto;
+                justify-content: center;
+        }
+        .post-data {
+                color: var(--color-text-primary);
+        }
 
-	.post-heading {
-		display: flex;
-		justify-content: center;
-		color: var(--color-text-main);
-	}
+        .post-heading {
+                display: flex;
+                justify-content: center;
+                color: var(--color-text-main);
+        }
 </style>

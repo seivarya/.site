@@ -3,56 +3,56 @@ const { title, link } = Astro.props;
 ---
 
 <a class="img-container" href={link} target="_blank">
-	<img class="img" src={link} alt={link} />
+        <img class="img" src={link} alt={link} />
 
-	<div class="img-footer">
-		<p class="img-title">{title}</p>
-	</div>
+        <div class="img-footer">
+                <p class="img-title">{title}</p>
+        </div>
 </a>
 
 <style>
-	a {
-		color: unset;
-	}
+        a {
+                color: unset;
+        }
 
-	.img-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		max-width: 800px;
-		text-decoration: none;
-	}
+        .img-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 800px;
+                text-decoration: none;
+        }
 
-	.img {
-		border: 1.3px solid gray;
-		width: 770px;
-		height: auto;
-		max-width: 100%;
+        .img {
+                border: 1.3px solid gray;
+                width: 770px;
+                height: auto;
+                max-width: 100%;
 
-		transition:
-			transform 0.25s ease,
-			box-shadow 0.25s ease;
-	}
+                transition:
+                        transform 0.25s ease,
+                        box-shadow 0.25s ease;
+        }
 
-	.img-container:hover .img {
-		transform: scale(1.03);
-		box-shadow: 0 8px 25px rgba(180, 180, 180, 0.15);
-	}
+        .img-container:hover .img {
+                transform: scale(1.03);
+                box-shadow: 0 8px 25px rgba(180, 180, 180, 0.15);
+        }
 
-	.img-footer {
-		margin-top: 10px;
-		display: flex;
-		justify-content: center;
-	}
+        .img-footer {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+        }
 
-	.img-title {
-		font-size: 0.8rem;
-	}
+        .img-title {
+                font-size: 0.8rem;
+        }
 
-	@media (max-width: 900px) {
-		.img {
-			width: 400px;
-			height: auto;
-		}
-	}
+        @media (max-width: 900px) {
+                .img {
+                        width: 400px;
+                        height: auto;
+                }
+        }
 </style>
