@@ -1,6 +1,6 @@
 @font-face {
     font-family: SauceCodeProNFM;
-    src: url("../assets/fonts/SauceCodeProNFM.ttf");
+    src: url("../assets/fonts/SauceCodeProNFM.woff2");
     font-display: swap;
 }
 
@@ -45,6 +45,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "SauceCodeProNFM", sans-serif;
+    font-weight: 400;
 
     user-select: none;
     -webkit-user-select: none;

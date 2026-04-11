@@ -2,25 +2,38 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
+
 import "../styles/global.css";
+import { ClassificationType } from "typescript";
 ---
 
 <!doctype html>
-<html style="background-color: #111111;">
+<html>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-	</head><theme-color content="#111111"></theme-color>
-	<meta name="theme-color" content="#111111" />
-	<title>seivarya</title>
-	<meta name="robots" content="index, follow" />
-	<link rel="icon" href="/self.png" />
+		<link
+			rel="preload"
+			as="font"
+			href="./src/assets/fonts/SauceCodeProNFM.woff2"
+			type="font/woff2"
+			crossorigin
+		/>
+
+		<meta name="theme-color" content="#111111" /><title>
+			seivarya
+		</title><meta name="robots" content="index, follow" /><link
+			rel="icon"
+			href="/self.png"
+		/></head
+	>
 
 	<body>
 		<div class="main-container">
 			<Header />
 			<slot />
 			<Footer />
+			<ClientRouter />
 		</div>
 		<script>
 			// disable right click context menu, coz it looks cool
@@ -49,5 +62,4 @@ import "../styles/global.css";
 			}
 		}
 	</style>
-
 </html>

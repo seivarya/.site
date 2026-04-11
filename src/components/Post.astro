@@ -8,14 +8,14 @@ const Content = content;
 ---
 
 <!-- structure of the <post> content -->
-<div class="post-container">
-	<Home>
+<Home>
+	<div class="post-container">
 		<h2 class="post-heading">{data.title}</h2>
 		<article class="post-data">
 			<Content components={mdxOverrides} />
 		</article>
-	</Home>
-</div>
+	</div>
+</Home>
 
 <style>
 	.post-container {
