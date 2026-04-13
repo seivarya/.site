@@ -3,55 +3,56 @@ title: domain name system
 date: 2025-06-15
 ---
 
-> note: this is a very abstract introduction to domain name system so don't use it as a "resource" to study.
+> Note: this is a very abstract introduction to domain name system so don't use it as a "resource" to study.
 
-whenever we type [https://my.site.com](https://t.co/hFC0XpdP6q) the browser doesn't know where to go,
+Whenever we type [https://my.site.com](https://t.co/hFC0XpdP6q) the browser doesn't know where to go,
 because to visit a website you have to know the [IP address](https://en.wikipedia.org/wiki/IP_address) the site lives
-on. it's pretty similar to how we type name in our mobile phones and call people even though we don't really remember their *phone number* (you'd have
+on. It's pretty similar to how we type names in our mobile phones and call people even though we don't really remember their *phone numbers* (you'd have
 to be Mike Ross to remember everyone's phone number).
 
 That's why the browser queries for IP address to a server and that server 
 is what we call an DNS server. The flow is simple:
 
-we request the DNS server for the IP of our target website -> the DNS 
-server gives a response -> done. right? It's not incorrect but for the sake
+We request the DNS server for the IP of our target website -> the DNS 
+server gives a response -> done. Right? It's not incorrect but for the sake
 of learning we will assume the case in which our DNS doesn't know the IP of the target domain.
 
 Note: DNS servers only use domain name, they don't care about protocols.
-### from the beginning
-when we type my.site.com first and foremost our system checks its
-stub resolver \[an operating system component that performs DNS name resolutions for applications on the machine, also called as `DNS client`].
+### From the Beginning
 
-it'll search its own cache memory \[if we ever visited the site previously the IP will be stored in the cache]. Again, for the sake of 
+When we type `my.site.com`, first and foremost our system checks its
+*stub resolver* \[an operating system component that performs DNS name resolutions for applications on the machine, also called as `DNS client`].
+
+It'll search its own cache memory \[if we ever visited the site previously the IP will be stored in the cache]. Again, for the sake of 
 learning we are assuming that everything is going wrong to understand the 
 concept well.
 
 Suppose we never visited this website before then what? In that scenario the stub resolver will search its own DNS server instead! Our machine has
 its own network configurations along with the IP address and a DNS server 
-we can talk to. yes, every operating system has a default DNS server through which our operating system tries to resolve DNS queries. Most of you can already assume that it's google, they have the IP address of
+we can talk to. Yes, every operating system has a default DNS server through which our operating system tries to resolve DNS queries. Most of you can already assume that it's google, they have the IP address of
 8.8.8.8 \[almost all the machines have this DNS server as its default].
 
-Our stub resolver will send a DNS query at 8.8.8.8 and ask the IP address
-of my.site.com. On this stage almost all the DNS queries can be 
-resolved i mean it's google! but let's say we are trying to visit some
-very fishy website that no one has ever visited before through google. anyways, if the DNS server of google doesn't have it then who does?
-the DNS server of google is a recursive DNS server which can perform 
+Our stub resolver will send a DNS query at `8.8.8.8` and ask the IP address
+of `my.site.com`. On this stage almost all the DNS queries can be 
+resolved, I mean it's *Google*! But let's say we are trying to visit some
+very fishy website that no one has ever visited before through Google. Anyways, if the DNS server of Google doesn't have it then who does?
+The DNS server of Google is a *recursive DNS server* which can perform 
 recursive DNS lookups. The DNS server itself queries other DNS servers and
 if they are recursive servers as well then they go further down the tree
-and eventually they return the IP client was looking for. It's basically
-a situation of "I don't know this but i know a guy who knows a guy who knows a guy who maybe knows the IP for this query".
+and eventually they return the IP the client was looking for. It's basically
+a situation of "I don't know this but I know a guy who knows a guy who knows a guy who maybe knows the IP for this query".
 
 In a scenario that anyone anywhere visited this site through google then 
 the IP can definitely be found into the DNS server because the DNS servers
 also have their own cache. (we are assuming that we didn't find our IP here as well and our recursive DNS lookup failed).
 
 DNS has hierarchy: on top of that hierarchy we have **root servers**.
-there are total 13 orgs with 13 server groups and few thousand servers 
-spread across the planet. any domain no matter how deep or hidden it is, 
+There are total 13 orgs with 13 server groups and few thousand servers 
+spread across the planet. Any domain no matter how deep or hidden it is, 
 can always be found in these servers but the root servers don't resolve 
 the domains they only function on **top level domains \[TLDs]**. `.com, .net, .co`
-are all examples of top level domain. these servers don't care about DNS 
-resolving. they have a list of DNS that handles the specific top level
+Are all examples of top level domain. These servers don't care about DNS 
+resolving. They have a list of DNS that handles the specific top level
 domain we have queried. "my.site.com" the root servers identify
 ".com" in our query and send a portion of database that includes the DNS 
 servers IP address who have ".com" domain. The root server points the 
@@ -65,14 +66,14 @@ such as `google.com`, `portflex.com`, `amazon.com`, in our case it's `site.com`.
 These records point to the authoritative name servers responsible for 
 those domains.
 
-Finally, google DNS queries the authoritative name servers for the `site.com` zone, which return DNS records for `my.site.com` (such as A, AAAA, CNAME, or NXDOMAIN), after which the result is cached and returned to the stub resolver. But what's 'my.' in our my.site.com ?
+Finally, Google DNS queries the authoritative name servers for the `site.com` zone, which return DNS records for `my.site.com` (such as A, AAAA, CNAME, or NXDOMAIN), after which the result is cached and returned to the stub resolver. But what's `my.` in our `my.site.com`?
 
 *Note*: The authoritative servers don't send IP address all the time. Sometimes it can be CNAME, A record, NXDOMAIN or something else.
 
-this portion is called a **subdomain**. It's something like a directory within
+This portion is called a **subdomain**. It's something like a directory within
 a bigger domain you create multiple subdomains over the second level 
 domain and each domain will have different content and will point users to 
-different servers. example: blog.my.site.com can host a blog,
+different servers. Example: blog.my.site.com can host a blog,
 shop.my.site.com can be for shopping products, portfolio.my.site.com can
 be self portfolio etc.
 
@@ -81,14 +82,14 @@ different IP address or even be hosted on a completely different server.
 Companies use subdomains to separate different parts of their website or 
 even for  staging/testing environments like dev.my.site.com
 
-By the way, this whole process is very very insecure ... by default our 
+By the way, this whole process is very very insecure... By default our 
 system's stub resolver sends requests at UDP \[User Datagram Protocol] port
-53 it's not encrypted.. meaning, we can sniff the traffic and see what the
-user searches in its system! or maybe we can block the response 8.8.8.8 
+53, and it's not encrypted... Meaning, we can sniff the traffic and see what the
+user searches in its system! Or maybe we can block the response `8.8.8.8` 
 sends and manipulate it such that we send another IP address of another 
-website and eventually hack the user. it's called DNS spoofing. Also, 
+website and eventually hack the user. It's called DNS spoofing. Also, 
 similarly like malicious users our ISPs can also see the queries our stub
-resolver sends. So how do we solve this issue? there is 
+resolver sends. So how do we solve this issue? There is 
 something called DOH \[DNS over https]. We know https is secure version of 
 http that lets us see websites in secure manner and hackers can't see what 
-websites we are visiting. this is, DNS.
+websites we are visiting. This is, DNS.

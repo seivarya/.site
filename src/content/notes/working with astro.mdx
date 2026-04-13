@@ -3,52 +3,52 @@ title: working with astro framework
 date: 2026-03-24
 ---
 
-i am learning astro. yk the *"insanely fast"* framework for server side 
-rendering & almost no `.js` code on the client side. yeah that one.
-since i've caterpillar's memory i'll write a simple blog in case i forget.
-note that this is bare bones basic stuff, you should really read the [docs](https://docs.astro.build/en/getting-started/)
+I am learning astro. Yk the *"insanely fast"* framework for server side 
+rendering & almost no `.js` Code on the client side. Yeah that one.
+Since I've caterpillar's memory I'll write a simple blog in case I forget.
+Note that this is bare bones basic stuff, you should really read the [docs](https://docs.astro.build/en/getting-started/)
 if you want to deep dive into the framework itself.
 
-let's get into it.
-the reason astro is a nice framework because it heavily forces
+Let's get into it.
+The reason astro is a nice framework because it heavily forces
 *island architecture*.
 
 
-the simple definition of islands architecture is, render HTML pages on the 
+The simple definition of islands architecture is, render HTML pages on the 
 server side and inject the "placeholders" around the dynamic region of the
-HTML page. in the image notice the (server-rendered HTML) sections.
-these are the "placeholders" that'll be injected onto the client side, into
-containerized widgets. and ofc they can be reused by the client.
-it looks like that it's *micro frontend* architecture but it's not, because 
+HTML page. In the image notice the (server-rendered HTML) sections.
+These are the "placeholders" that'll be injected onto the client side, into
+containerized widgets. And ofc they can be reused by the client.
+It looks like that it's *micro frontend* architecture but it's not, because 
 the term "micro frontend" doesn't imply that the dedicated rendered output
 will be rendered using HTML.
 
-usually, we might have `<script>` that looks for a component and instantiates
-a jQuery plugin on it. but in astro the component would be rendered on the
-server side and a dedicated `<script>` gets emitted for that that loads the 
-dedicated component. (ik its a wrong explanation i'll fix it later)
+Usually, we might have `<script>` That looks for a component and instantiates
+a jQuery plugin on it. But in astro the component would be rendered on the
+server side and a dedicated `<script>` Gets emitted for that that loads the 
+dedicated component. (ik its a wrong explanation I'll fix it later)
 
-the *island architecture* approach divides each component with it own 
-loading `<script>` meaning, it separates the hydration of components resulting
+The *island architecture* approach divides each component with it own 
+loading `<script>` Meaning, it separates the hydration of components resulting
 in faster and smoother pages unlike *progressive hydration* which is one 
-single `<script>` with gradual hydration. (both are very different)
+single `<script>` With gradual hydration. (both are very different)
 
-this makes the island architecture very different from progressive hydration.
-it doesn't require top down rendering! since each component is isolated unit
+This makes the island architecture very different from progressive hydration.
+It doesn't require top down rendering! Since each component is isolated unit
 one component's performance issue won't affect/hold down the other's.
 
-an island is simply a interactive component that can be independently hydrated 
+An island is simply a interactive component that can be independently hydrated 
 or rendered without involing the rest of the page.
-a *client island* is an interactive component that is hydrated separately from the 
+A *client island* is an interactive component that is hydrated separately from the 
 rest of the page, whereas, 
 *server islands* are rendered separately 
 
-#### client islands
-astro renders every UI component to just html & css by default, and strips all the
+#### Client Islands
+Astro renders every UI component to just html & css by default, and strips all the
 js automatically.
 
-and to turn any of the static UI component into an interactive island we just need
-a `client:*` directive. after this, astro builds and bundles your 
+And to turn any of the static UI component into an interactive island we just need
+a `client:*` directive. After this, Astro builds and bundles your 
 client side js for optimized perf.
 ```js
 // initially: standard build output yields pure html
@@ -61,20 +61,20 @@ client side js for optimized perf.
 // now after using the client:* directive we make it interactive and turn it into an interactive component and of course the rest of the stuff stays static. pretty neat, right?
 ```
 
-this *interaction* thingy is configured at the component level [per the docs],
+This *interaction* thingy is configured at the component level [per the docs],
 this implies that we can use different directives for different components.
 `client:idle` tells a component to load when browser becomes idle.
 `client:visible` tells a component to load only once it enters the viewport.
 and so on.
 
-#### server islands
+#### Server Islands
 
-these exist to move expensive/slow server side code out of the way of the main
+These exist to move expensive/slow server side code out of the way of the main
 render process, this makes easy to combine high performance static HTML
 and dynamic server generated components.
 
-by adding `server:defer` in the component one can make the component as it's own server island.
-this breaks your page into server rendered areas that load parallely instead of sequentially.
+By adding `server:defer` in the component one can make the component as its own server island.
+This breaks your page into server rendered areas that load parallely instead of sequentially.
 
 ```js
 // pages/test.astro
@@ -84,19 +84,19 @@ import Component from "../components/Component.astro";
 <Component server:defer/> // this will render independently as a server island and won't block the rest of html from rendering instantly
 ```
 
-the architecture of server islands ensures that the components will be cached very aggresively (ofc it 
-also depends on the server config not just the *island*)
-the page displays fallback content instantly and shows the rendered content
+The architecture of server islands ensures that the components will be cached very aggressively (ofc it 
+also depends on the server config not just the *island*).
+The page displays fallback content instantly and shows the rendered content
 as soon as it's available.
 
-#### finally starting to make something
+#### Finally Starting to Make Something
 
-so i initially thought i should follow the "blog tutorial" on docs but..
-*insert i dont think i will meme*
+So I initially thought I should follow the "blog tutorial" on docs but..
+*insert I don't think I will meme*
 
-anyway i'll be hosting my portfolio on github pages and they really don't
+Anyway I'll be hosting my portfolio on github pages and they really don't
 have the concept of server side rendering so server islands won't be used.
-only client stuff. (i may or may not write it)
+Only client stuff. (I may or may not write it)
 
 
 ```js 
@@ -110,13 +110,13 @@ import Home from "../../src/layouts/home_page_layout.astro"
 	<p>hello world</p>
 </Home>
 ```
-the information on top of the `.astro` file, included in code fences is called the frontmatter. this data is just 
+The information on top of the `.astro` file, included in code fences is called the *frontmatter*. This data is just 
 javascript section.
-the frontmatter is server only js. and the section below
-it (template) is the html sent to client.
+The frontmatter is server only js, and the section below
+it (template) is the HTML sent to client.
 
 
-instead of hardcoding the string into the page, one can use `{ }` for dynamic
+Instead of hardcoding the string into the page, one can use `{ }` for dynamic
 content rendering. 
 ```js
 ---
@@ -130,39 +130,39 @@ const data = "hey, im stupid";
 	<h3> { data } </h3> 
 </body>
 ```
-pretty neat.
+Pretty neat.
 
-i stole most of the design ideas from [https://namishh.com](https://namishh.com) and [https://avhi.in](https://avhi.in), so credits to them for the inspiration. anyways, i was pretty confused about where to place the navigation component. initially it was above the footer, but that felt wrong (because it is).
+I stole most of the design ideas from [namishh.com](https://namishh.com) and [avhi.in](https://avhi.in), so credits to them for the inspiration. Anyways, I was pretty confused about where to place the navigation component. Initially it was above the footer, but that felt wrong (because it is).
 
-the top section of the site was basically "EST. 2005" and a clock component, followed by a profile picture. this whole thing was hardcoded into `index.astro`, but there was an issue.
+The top section of the site was basically "EST. 2005" and a clock component, followed by a profile picture. This whole thing was hardcoded into `index.astro`, but there was an issue.
 
-if i want to place the navigation component below the profile picture, i need to ensure that the stuff above it stays the same on every page, while the rest is the content that actually changes.
+If I want to place the navigation component below the profile picture, I need to ensure that the stuff above it stays the same on every page, while the rest is the content that actually changes.
 
-that's why i removed the hardcoded part and made the whole thing a `<Header />` component. (you can see my trash frontend skills here).
+That's why I removed the hardcoded part and made the whole thing a `<Header />` Component. (you can see my trash frontend skills here).
 
-rest of the stuff was basic html, css, and structuring thingy.
-one more thing i want to talk about is *props*.
+Rest of the stuff was basic html, css, and structuring thingy.
+One more thing I want to talk about is *props*.
 
-in astro user can implement dyanamic behvaiour to the components such that
+In astro user can implement dyanamic behvaiour to the components such that
 for each new instance of the component the only prerequisite is the data
-required to inject into the component. and everything else works just fine!
-define a layout for placement of the components/ instances and voila!
+required to inject into the component. And everything else works just fine!
+Define a layout for placement of the components/ instances and voila!
 
-think of astro components as functions and the props as arguments for the 
+Think of astro components as functions and the props as arguments for the 
 function.
-in my site i was making each "project" as a card with it's title, 
-description, tags, and optional url. so in the component's definition we do:
+In my site I was making each "project" as a card with it's title, 
+description, tags, and optional url. So in the component's definition we do:
 ```js
 // destructing the injected data from astro.props
 const { title, description, tags, link } = Astro.props;
 ```
-this catches the bundled data and unpacks it into the variables that 
-we can later use in html with `{ }` syntax.
+This catches the bundled data and unpacks it into the variables that 
+we can later use in html with `{ }` Syntax.
 
-fun fact: in type script one can define `interface Props` that'll work like 
+Fun fact: in type script one can define `interface Props` That'll work like 
 type checker and enforce the data definition.
 
-after this in my projects.astro page i just do
+After this in my projects.astro page I just do
 ```js
 // mapping over a list of projects and rendering a component for each
 { 
@@ -176,28 +176,28 @@ after this in my projects.astro page i just do
 }
 ```
 
-and we're good to go.
+And we're good to go.
 
-##### content collections
-it's a method to manage sets of content in astro project.
-like blog and stuff. these help organize and query the docs,
+##### Content Collections
+It's a method to manage sets of content in an Astro project.
+Like blog and stuff. These help organize and query the docs,
 enable intellisense and type checks.
-since i have sections like notes, writings, arts i can use
-this to structure my stuff in `src/content/` dir.
+Since I have sections like notes, writings, arts I can use
+this to structure my stuff in the `src/content/` dir.
 
-there are two types of content collections available to allow
-you to work with data fetched.. either at *build time* or at
+There are two types of content collections available to allow
+you to work with data fetched... either at *build time* or at
 *request time*!
 
-both of these use:
-1. a requires `loader` that retrieves the content and metadata
-   from whereever it's stores through content focus APIs.
-2. and optional collection `schema` that allows you to define
-   the expected shape of each entry for type safety.. kinda like
-   zod. but i don't think i'll use it or i might.
+Both of these use:
+1. A required `loader` that retrieves the content and metadata
+   from wherever it's stored through content focus APIs.
+2. An optional collection `schema` that allows you to define
+   the expected shape of each entry for type safety... kinda like
+   zod. But I don't think I'll use it or I might.
 
-collections stored locally can use build time loaders like `glob()`, `file()`
-to fetch from `.md`, `.mdx`, `.yaml`, `.json`
+Collections stored locally can use build time loaders like `glob()`, `file()`
+To fetch from `.md`, `.mdx`, `.yaml`, `.json`
 
 ```ts
 // Example: src/content.config.ts
@@ -216,15 +216,15 @@ const notesCollection = defineCollection({
 export const collections = { notes: notesCollection };
 ```
 
-or you can use custom build time loaders. i don't think i'll look into
-it for now. but i might migrate my `content/` to it later.
+Or you can use custom build time loaders. I don't think I'll look into
+it for now. But I might migrate my `content/` To it later.
 
-##### dynamic content loading
+##### Dynamic Content Loading
 
-in dynamic content loading, you predefine a file in `pages/` route with file name `[slug].astro` where *slug* is the identifier (usually derived from the file name / path) of the content you've to render.  
+In dynamic content loading, you predefine a file in `pages/` route with file name `[slug].astro` where *slug* is the identifier (usually derived from the file name / path) of the content you've to render.  
 
 
-anyways after some tinkering around i ended up with this structure
+Anyways after some tinkering around I ended up with this structure
 
 ```
 src/
@@ -278,58 +278,58 @@ src/
     └── global.css
 ```
 
-pretty nice huh?
+Pretty nice huh?
 
-so i'll try to explain the whole dynamic content rendering pipeline.  
+So I'll try to explain the whole dynamic content rendering pipeline.  
 
-it all begins with user wanting to read the *notes* route on `pages/`  
-that triggers the `getCollection('notes')` method to fetch an **array**  
+It all begins with user wanting to read the *notes* route on `pages/`.  
+That triggers the `getCollection('notes')` method to fetch an **array**  
 containing all the collection entries (basically all the posts in `notes/` dir).  
-the data in these entries is used to create a `CleanIndex` component that  
+The data in these entries is used to create a `CleanIndex` component that  
 renders index of all the posts within `notes/` (similar to how a book  
 has index on first page).  
-we pass a *slug* argument in this component in order  
-to attach the url via `href` property of an `<a>` tag  
-now we've got our route set but  
-if astro only treats stuff in `pages/` as routes .. how do we actually  
-get it to show? i mean we never added anything in `pages/` right?  
-it's all in `src/content/` ..  
+We pass a *slug* argument in this component in order  
+to attach the url via `href` property of an `<a>` tag.  
+Now we've got our route set but  
+if Astro only treats stuff in `pages/` as routes... how do we actually  
+get it to show? I mean we never added anything in `pages/` right?  
+It's all in `src/content/`...  
 
-> very simple solution is just drag and drop `content/` in the `pages/` but  
-> i was learning so i *had* to overengineer this part. (also on a big scale  
+> Very simple solution is just drag and drop `content/` in the `pages/` but  
+> I was learning so I *had* to overengineer this part. (Also on a big scale  
 > this isn't a very logical thing to do.)
 
-that's where our dynamic content loading comes in  
-we predefine a `[slug].astro` file in the exact dir/ format  
-in our case `pages/content/notes/[slug].astro`  
-whenever user clicks the post, dynamic routing gets triggered in  
-`/page/content/notes/[slug].astro`  
-this file exports a `getStaticPaths()` method which returns an array of  
+That's where our dynamic content loading comes in.  
+We predefine a `[slug].astro` file in the exact dir/ format  
+in our case `pages/content/notes/[slug].astro`.  
+Whenever user clicks the post, dynamic routing gets triggered in  
+`/page/content/notes/[slug].astro`.  
+This file exports a `getStaticPaths()` method which returns an array of  
 objects that define the *route params* (not the content itself) that need to be generated.  
-after that, inside the page, you fetch the actual content using  
-`getEntry('notes', slug)` (or `getCollection()` if needed)  
+After that, inside the page, you fetch the actual content using  
+`getEntry('notes', slug)` (or `getCollection()` if needed).  
 
-and then calling `.render()` on the entry compiles the mdx into a `Content` component.  
-this `Content` is not raw data but a *renderable component*  
-containing the compiled output of the post..  
-and ofcourse this component accepts an argument `components` which can be  
-used to configure the rendering style of `.mdx`  
-now don't get me wrong you can absolutely just do this using `.css`  
+And then calling `.render()` on the entry compiles the mdx into a `Content` component.  
+This `Content` is not raw data but a *renderable component*  
+containing the compiled output of the post...  
+And of course this component accepts an argument `components` which can be  
+used to configure the rendering style of `.mdx`.  
+Now don't get me wrong you can absolutely just do this using `.css`  
 in the rendered section directly but this is a much cleaner / better  
-approach.. 
+approach...
 
-#### is:inline tag
+#### \`is:inline\` Tag
 
-one thing that bothered me was the clock component in my header.  
-it worked very nicely sure but there was a small bug. whenever the site's  
+One thing that bothered me was the clock component in my header.  
+It worked very nicely sure but there was a small bug. Whenever the site's  
 loaded for a very small time frame you'll see the _placeholder_ text instead  
-of the clock itself. this was very irritating because the flick really  
+of the clock itself. This was very irritating because the flick really  
 annoys ppl.  
 
-so the solution was `is:inline`. when loading scripts, astro usually bundles  
+So the solution was `is:inline`. When loading scripts, Astro usually bundles  
 and processes them (and often defers execution), and that is the problem right there.  
-during that delay we briefly see the _placeholder_.  
-the `is:inline` directive simply skips that processing step and keeps the script  
+During that delay we briefly see the _placeholder_.  
+The `is:inline` directive simply skips that processing step and keeps the script  
 inline in the HTML, so it runs immediately as the page loads and voila!
 
 ```html
@@ -341,12 +341,12 @@ inline in the HTML, so it runs immediately as the page loads and voila!
 </head>
 ```
 
-now we're going to move towards customizing `.mdx` files and how we can
+Now we're going to move towards customizing `.mdx` files and how we can
 create & pass custom components in it.
-one fairly nice thing i noticed was that if we are using *content
+One fairly nice thing I noticed was that if we are using *content
 collections* we can configure our define collection module such that `.md` files within a 
-specific collection gets treated as `.mdx`! it won't apply this behaviour 
-globally.. but only on the collection we choose!.
+specific collection gets treated as `.mdx`! It won't apply this behaviour 
+globally... but only on the collection we choose!
 ```js
 import { defineCollection, z } from 'astro:content';
 
@@ -358,16 +358,17 @@ const blogs = defineCollection({
 	}
 })
 ```
-###### using custom components in astro
 
-there are two primary ways to do this.
-1. create your own jsx components like we did in `pages/` and then import those components in `.mdx` file use it and we're good to go.
-2. customize predefined stuff in `.mdx` only. for example, code blocks, headings, hyperlinks, etc.
+#### Using Custom Components in Astro
 
-i don't think i want custom jsx components for now so i'll go with overriding
+There are two primary ways to do this.
+1. Create your own jsx components like we did in `pages/` and then import those components in `.mdx` file, use it and we're good to go.
+2. Customize predefined stuff in `.mdx` Only. For example, code blocks, headings, hyperlinks, etc.
+
+I don't think I want custom jsx components for now so I'll go with overriding
 the mardown generated elements.
 ...
 
 
-that's it. after this it's just me using antigravity and fixing spelling mistakes in blogs and
+That's it. After this it's just me using antigravity and fixing spelling mistakes in blogs and
 changing theme colors.
