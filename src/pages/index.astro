@@ -14,10 +14,10 @@ import Socials from "../components/Socials.astro";
         <section class="about-section">
                 <div class="intro-section">
                         <p>
-                                hey, it's shivang. i am a backend developer (i
-                                think). currently working with some low level
-                                stuff. while also freelancing in web. i'm
-                                currently working with:
+                                hey, it's shivang. i am a backend developer.
+                                currently working with some low level stuff.
+                                while also freelancing in web. i'm currently
+                                working with:
                         </p><br />
                 </div>
 
@@ -31,24 +31,28 @@ import Socials from "../components/Socials.astro";
                 </div>
 
                 <div class="contact-section">
-                        If you want to work together, or have some feedback
+                        if you want to work together, or have some feedback
                         regarding any of my projects, <br /><br />
                         shoot me a mail at
-                        <a href="mailto:hey@seivarya.in">hey@seivarya.in</a><br
-                        /><br />
+                        <a class="email-link" href="mailto:hey@seivarya.in"
+                                >hey@seivarya.in</a
+                        ><br /><br />
                         in my free time, you’ll usually find me writing, playing chess,
-                        reading books, or watching shows. maybe I’ll create a section
+                        reading books, or watching shows. maybe i’ll create a section
                         for it too. i have many social accounts linked, but i’m not
                         active on most of them (because i have a life) you’ll get
                         the fastest response from <a
+                                class="discord-link"
                                 href="https://discord.com/users/1345276369566699530"
                                 >discord</a
                         >.
                         <br /><br />
                         this site was mostly created by me but i took some design
                         ideas from
-                        <a href="https://namishh.com">namish</a> & <a
-                                href="https://avhi.in">avhi.in</a
+                        <a class="friend-link" href="https://namishh.com"
+                                >namish</a
+                        > & <a class="friend-link" href="https://avhi.in"
+                                >avhi.in</a
                         > do checkout their stuff too.
                 </div>
         </section>
@@ -65,19 +69,31 @@ import Socials from "../components/Socials.astro";
         .contact-section a,
         .contact-section a:visited,
         .contact-section a:active {
-                color: var(--color-text-muted);
-                text-decoration: underline;
-                text-decoration-color: var(--color-border);
-                text-underline-offset: 4px;
+                text-decoration: none;
+                border-bottom: 1px solid transparent;
+                padding-bottom: 1px;
+                font-weight: 500;
                 transition:
-                        color 0.2s,
-                        text-decoration-color 0.2s;
-                padding-bottom: 2px;
+                        border-bottom-color 0.25s ease,
+                        opacity 0.25s ease;
         }
+
+        .contact-section .email-link,
+        .contact-section .friend-link {
+                color: var(--color-text-primary);
+                border-bottom: none;
+        }
+        .contact-section .discord-link {
+                color: var(--color-brand-discord);
+                border-bottom-color: rgba(157, 166, 255, 0.3);
+        }
+
         .contact-section a:hover,
         .contact-section a:focus {
-                color: var(--color-text-hover);
-                text-decoration-color: var(--color-text-hover);
+                opacity: 0.85;
+        }
+        .contact-section .discord-link:hover {
+                border-bottom-color: var(--color-brand-discord);
         }
         .about-section {
                 display: flex;
@@ -115,18 +131,23 @@ import Socials from "../components/Socials.astro";
         .author-role {
                 margin-top: 13px;
                 width: fit-content;
-                text-decoration: underline;
-                text-decoration-color: var(--color-border);
-                text-underline-offset: 4px;
+                text-decoration: none;
+                border-bottom: 1px solid var(--color-border);
+                padding-bottom: 2px;
                 color: var(--color-text-muted);
                 font-weight: 300;
                 font-size: 1.1rem;
                 cursor: context-menu;
-                transition: color 0.2s ease;
+                transition:
+                        color 0.25s ease,
+                        border-bottom-color 0.25s ease;
         }
         .author-role:hover {
                 color: var(--color-text-main);
-                text-decoration-color: var(--color-text-main);
+                border-bottom-color: var(--color-text-main);
+        }
+        .perm-link {
+                color: var(--color-text-main);
         }
 
         .intro-section {

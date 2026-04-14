@@ -1,6 +1,20 @@
 @font-face {
+
         font-family: SauceCodeProNFM;
         src: url("/fonts/SauceCodeProNFM.woff2");
+        font-display: swap;
+
+}
+
+@font-face {
+        font-family: OpenSans;
+        src: url("/fonts/OpenSansRegular.woff2");
+        font-display: swap;
+}
+
+@font-face {
+        font-family: Xenon;
+        src: url("/fonts/Xenon.woff2");
         font-display: swap;
 }
 
@@ -13,24 +27,25 @@ html {
 
 :root {
         /* if you want to change the theme of site, configure this palatte using gpitty (coz i did too) */
-        --color-bg: #1e1e2e;
-        --color-text-main: #ca9ee6;
-        --color-text-primary: #e6e9ef;
-        --color-text-muted: #b5bfe2;
-        --color-text-hover: #babbf1;
-        --color-border: #45475a;
-        --color-bg-alt: #181825;
-        --color-text-italic: #f2d5cf;
+        /* Updated by Antigravity: deep, high-contrast OLED-friendly aesthetic */
+        --color-bg: #0a090e;
+        --color-text-main: #c495ff;
+        --color-text-primary: #f2f0f5;
+        --color-text-muted: #8b8796;
+        --color-text-hover: #dfc4ff;
+        --color-border: #24222b;
+        --color-bg-alt: #16141d;
+        --color-text-italic: #ffb1b1;
 
-        --color-tech-stack: #a5adce;
-        --color-tech-stack-span: #e6e9ef;
-        --color-loading: #e5c890;
+        --color-tech-stack: #8b8796;
+        --color-tech-stack-span: #f2f0f5;
+        --color-loading: #ffd166;
 
-        --color-brand-github: #e6e9ef;
-        --color-brand-twitter: #8caaee;
-        --color-brand-linkedin: #8caaee;
-        --color-brand-telegram: #99d1db;
-        --color-brand-discord: #babbf1;
+        --color-brand-github: #f2f0f5;
+        --color-brand-twitter: #6ea8ff;
+        --color-brand-linkedin: #6ea8ff;
+        --color-brand-telegram: #4cc7db;
+        --color-brand-discord: #9da6ff;
 }
 
 body {
@@ -52,7 +67,7 @@ body {
 }
 
 a {
-        cursor: default;
+        cursor: pointer;
         -webkit-tap-highlight-color: transparent;
         outline: none;
 }
@@ -80,38 +95,34 @@ a {
 .nav-bar a,
 .nav-bar a:visited,
 .nav-bar a:active {
-        position: relative;
         display: inline-block;
         color: var(--color-text-muted);
         text-decoration: none;
         text-align: center;
-        transition: color 0.25s ease;
-}
-
-.nav-bar a::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background-color: var(--color-border);
-        transition:
-                left 0.25s ease,
-                right 0.25s ease,
-                background-color 0.25s ease;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 2px;
+        transition: color 0.25s ease, border-bottom-color 0.25s ease;
 }
 
 .nav-bar a:hover,
 .nav-bar a:focus {
         color: var(--color-text-main);
+        border-bottom-color: var(--color-text-main);
 }
 
-.nav-bar a:hover::after,
-.nav-bar a:focus::after {
-        left: -6px;
-        right: -6px;
-        background-color: var(--color-text-main);
+p a,
+li a {
+        color: var(--color-text-main);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(196, 149, 255, 0.3);
+        padding-bottom: 1px;
+        transition: border-bottom-color 0.25s ease, opacity 0.25s ease;
+}
+
+p a:hover,
+li a:hover {
+        opacity: 0.85;
+        border-bottom-color: var(--color-text-main);
 }
 
 @media (max-width: 900px) {
