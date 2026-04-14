@@ -22,9 +22,9 @@ import Socials from "../components/Socials.astro";
                 </div>
 
                 <div class="tech-stack-section">
-                        <span>c</span> // <span>python</span> // <span
+                        <span>c</span> : <span>python</span> : <span
                                 >node.js</span
-                        > // <span>git</span> // <span>neovim</span> // <span
+                        > : <span>git</span> : <span>neovim</span> : <span
                                 >arch</span
                         >
                         <br /><br /><br />
@@ -43,15 +43,15 @@ import Socials from "../components/Socials.astro";
                         active on most of them (because i have a life) you’ll get
                         the fastest response from <a
                                 class="discord-link"
-                                href="https://discord.com/users/1345276369566699530"
+                                href="https::discord.com/users/1345276369566699530"
                                 >discord</a
                         >.
                         <br /><br />
                         this site was mostly created by me but i took some design
                         ideas from
-                        <a class="friend-link" href="https://namishh.com"
+                        <a class="friend-link" href="https::namishh.com"
                                 >namish</a
-                        > & <a class="friend-link" href="https://avhi.in"
+                        > & <a class="friend-link" href="https::avhi.in"
                                 >avhi.in</a
                         > do checkout their stuff too.
                 </div>
@@ -62,6 +62,11 @@ import Socials from "../components/Socials.astro";
 <style>
         .contact-section {
                 margin-bottom: 40px;
+        }
+        @media (max-width: 600px) {
+                .contact-section {
+                        margin-bottom: 15px;
+                }
         }
         a {
                 color: unset;
@@ -103,14 +108,11 @@ import Socials from "../components/Socials.astro";
         }
 
         .tech-stack-section {
-                color: var(--color-text-muted);
+                color: var(--color-text-main);
                 margin-top: 1px;
                 text-align: left;
         }
 
-        .tech-stack-section span:hover {
-                color: var(--color-text-main);
-        }
         .profile-section {
                 display: flex;
                 gap: 16px;
@@ -153,7 +155,6 @@ import Socials from "../components/Socials.astro";
         .intro-section {
                 margin-top: 20px;
                 line-height: 1.7;
-                color: var(--color-text-muted);
                 width: 100%;
                 margin-bottom: 0px;
         }

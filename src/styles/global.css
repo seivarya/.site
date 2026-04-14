@@ -27,17 +27,17 @@ html {
 
 :root {
         /* if you want to change the theme of site, configure this palatte using gpitty (coz i did too) */
-        /* Updated by Antigravity: deep, high-contrast OLED-friendly aesthetic */
-        --color-bg: #0a090e;
-        --color-text-main: #c495ff;
+
+        --color-bg: hsl(257, 22%, 3%);
+        --color-text-main: #dfd5fd;
         --color-text-primary: #f2f0f5;
-        --color-text-muted: #8b8796;
-        --color-text-hover: #dfc4ff;
-        --color-border: #24222b;
-        --color-bg-alt: #16141d;
+        --color-text-muted: #a9a3b9;
+        --color-text-hover: #ffffff;
+        --color-border: #2d293b;
+        --color-bg-alt: #1c1926;
         --color-text-italic: #ffb1b1;
 
-        --color-tech-stack: #8b8796;
+        --color-tech-stack: #a9a3b9;
         --color-tech-stack-span: #f2f0f5;
         --color-loading: #ffd166;
 
@@ -50,13 +50,10 @@ html {
 
 body {
         margin: 0;
-        min-height: 100dvh;
+        min-height: 100svh;
         overflow-x: hidden;
         background-color: var(--color-bg);
         color: var(--color-text-primary);
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-family: "SauceCodeProNFM", sans-serif;
         font-weight: 400;
 

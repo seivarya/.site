@@ -47,21 +47,18 @@
 .post-data a,
 .post-data a:visited,
 .post-data a:active {
-        color: var(--color-text-hover);
-        text-decoration: underline;
-        text-decoration-color: var(--color-border);
-        text-decoration-thickness: 1px;
-        text-underline-offset: 4px;
-        transition:
-                color 0.2s ease,
-                text-decoration-color 0.2s ease;
+        color: var(--color-text-main);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(223, 213, 253, 0.3);
+        padding-bottom: 1px;
+        transition: border-bottom-color 0.25s ease, opacity 0.25s ease;
         cursor: pointer;
 }
 
 .post-data a:hover,
 .post-data a:focus {
-        color: var(--color-text-main);
-        text-decoration-color: var(--color-text-main);
+        opacity: 0.85;
+        border-bottom-color: var(--color-text-main);
 }
 
 /* Emphasized Text */

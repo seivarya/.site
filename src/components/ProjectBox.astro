@@ -61,10 +61,12 @@ const { title, description, tags, link = "/" } = Astro.props;
         }
 
         .project-box:hover .title,
-        .project-box:hover .description,
-        .project-box:hover .tag,
         .project-box:hover .github-link {
                 color: var(--color-text-main);
+        }
+        
+        .project-box:hover .description {
+                color: var(--color-text-primary);
         }
 
         .header-row {
