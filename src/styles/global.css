@@ -1,11 +1,3 @@
-@font-face {
-
-        font-family: SauceCodeProNFM;
-        src: url("/fonts/SauceCodeProNFM.woff2") format("woff2");
-        font-display: optional;
-
-}
-
 html {
         overflow-y: scroll;
         /* Force vertical scrollbar track constantly so long notes don't shift layout */
@@ -42,7 +34,7 @@ body {
         overflow-x: hidden;
         background-color: var(--color-bg);
         color: var(--color-text-primary);
-        font-family: "SauceCodeProNFM", sans-serif;
+        font-family: "Source Code Pro", monospace !important;
         font-weight: 400;
 
         user-select: none;

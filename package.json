@@ -10,10 +10,12 @@
                 "generate-types": "wrangler types"
         },
         "dependencies": {
-                "@astrojs/cloudflare": "^13.1.9",
+                "@astrojs/check": "^0.9.8",
+                "@astrojs/cloudflare": "^13.1.10",
                 "@astrojs/mdx": "^5.0.2",
                 "@astrojs/rss": "^4.0.16",
                 "@astrojs/sitemap": "^3.7.1",
+                "@fontsource/source-code-pro": "^5.2.7",
                 "@mdx-js/language-server": "^0.6.3",
                 "astro": "^6.0.8",
                 "astro-mermaid": "^2.0.1",
@@ -21,6 +23,6 @@
         },
         "devDependencies": {
                 "typescript": "^5.9.3",
-                "wrangler": "^4.82.2"
+                "wrangler": "^4.83.0"
         }
 }
