@@ -10,7 +10,7 @@
                 "generate-types": "wrangler types"
         },
         "dependencies": {
-                "@astrojs/check": "^0.9.8",
+                "@astrojs/check": "^0.9.2",
                 "@astrojs/cloudflare": "^13.1.10",
                 "@astrojs/mdx": "^5.0.2",
                 "@astrojs/rss": "^4.0.16",

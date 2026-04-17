@@ -22,9 +22,9 @@ import Socials from "../components/Socials.astro";
                 </div>
 
                 <div class="tech-stack-section">
-                        <span>c</span> : <span>python</span> : <span
+                        <span>c</span> | <span>python</span> | <span
                                 >node.js</span
-                        > : <span>git</span> : <span>neovim</span> : <span
+                        > | <span>git</span> | <span>neovim</span> | <span
                                 >arch</span
                         >
                         <br /><br /><br />
@@ -33,27 +33,19 @@ import Socials from "../components/Socials.astro";
                 <div class="contact-section">
                         if you want to work together, or have some feedback
                         regarding any of my projects, <br /><br />
-                        shoot me a mail at
+                        shoot me a mail at:
                         <a class="email-link" href="mailto:hey@seivarya.in"
                                 >hey@seivarya.in</a
                         ><br /><br />
-                        in my free time, you’ll usually find me writing, playing chess,
-                        reading books, or watching shows. maybe i’ll create a section
-                        for it too. i have many social accounts linked, but i’m not
-                        active on most of them (because i have a life) you’ll get
-                        the fastest response from <a
+                        in my free time, you'll usually find me playing games, reading
+                        blogs or books, or watching shows. i have several social accounts
+                        linked, but i'm not active on most of them. you'll get the
+                        fastest response on <a
                                 class="discord-link"
                                 href="https::discord.com/users/1345276369566699530"
                                 >discord</a
                         >.
                         <br /><br />
-                        this site was mostly created by me but i took some design
-                        ideas from
-                        <a class="friend-link" href="https::namishh.com"
-                                >namish</a
-                        > & <a class="friend-link" href="https::avhi.in"
-                                >avhi.in</a
-                        > do checkout their stuff too.
                 </div>
         </section>
         <Socials />
@@ -83,10 +75,13 @@ import Socials from "../components/Socials.astro";
                         opacity 0.25s ease;
         }
 
-        .contact-section .email-link,
         .contact-section .friend-link {
                 color: var(--color-text-primary);
                 border-bottom: none;
+        }
+        .contact-section .email-link {
+                color: var(--color-text-primary);
+                border-bottom-color: rgba(255, 255, 255, 0.3);
         }
         .contact-section .discord-link {
                 color: var(--color-brand-discord);
@@ -96,6 +91,9 @@ import Socials from "../components/Socials.astro";
         .contact-section a:hover,
         .contact-section a:focus {
                 opacity: 0.85;
+        }
+        .contact-section .email-link:hover {
+                border-bottom-color: rgba(255, 255, 255, 1);
         }
         .contact-section .discord-link:hover {
                 border-bottom-color: var(--color-brand-discord);

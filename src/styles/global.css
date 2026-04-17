@@ -1,6 +1,5 @@
 html {
         overflow-y: scroll;
-        /* Force vertical scrollbar track constantly so long notes don't shift layout */
         background-color: var(--color-bg);
         color: var(--color-text-primary);
 }
@@ -19,7 +18,7 @@ html {
 
         --color-tech-stack: #a9a3b9;
         --color-tech-stack-span: #f2f0f5;
-        --color-loading: #ffd166;
+        --color-loading: #f2f0f5;
 
         --color-brand-github: #f2f0f5;
         --color-brand-twitter: #6ea8ff;
@@ -117,4 +116,5 @@ li a:hover {
                 justify-content: center;
                 gap: 30px;
         }
+
 }
