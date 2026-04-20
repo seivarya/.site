@@ -13,12 +13,44 @@ import { ClassificationType } from "typescript";
         <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width" />
-                <meta name="theme-color" content="#13111a" /><title>
+                <meta name="theme-color" content="#050505" /><title>
                         seivarya
                 </title><meta name="robots" content="index, follow" /><link
                         rel="icon"
-                        href="/self.png"
+                        href="/self.webp"
                 />
+                <script is:inline>
+                        function applyTheme() {
+                                const savedTheme =
+                                        localStorage.getItem("theme");
+                                if (savedTheme) {
+                                        document.documentElement.setAttribute(
+                                                "data-theme",
+                                                savedTheme,
+                                        );
+                                        if (savedTheme === "light") {
+                                                document.querySelector(
+                                                        'meta[name="theme-color"]',
+                                                )?.setAttribute(
+                                                        "content",
+                                                        "#fdfbfb",
+                                                );
+                                        } else {
+                                                document.querySelector(
+                                                        'meta[name="theme-color"]',
+                                                )?.setAttribute(
+                                                        "content",
+                                                        "#050505",
+                                                );
+                                        }
+                                }
+                        }
+                        applyTheme();
+                        document.addEventListener(
+                                "astro:after-swap",
+                                applyTheme,
+                        );
+                </script>
         </head>
 
         <body>

@@ -7,18 +7,18 @@ html {
 :root {
         /* if you want to change the theme of site, configure this palatte using gpitty (coz i did too) */
 
-        --color-bg: hsl(257, 22%, 3%);
-        --color-text-main: #dfd5fd;
-        --color-text-primary: #f2f0f5;
-        --color-text-muted: #a9a3b9;
+        --color-bg: #050505;
+        --color-text-main: #ffffff;
+        --color-text-primary: #e0e0e0;
+        --color-text-muted: #999999;
         --color-text-hover: #ffffff;
-        --color-border: #2d293b;
-        --color-bg-alt: #1c1926;
-        --color-text-italic: #ffb1b1;
+        --color-border: #2a2a2a;
+        --color-bg-alt: #111111;
+        --color-text-italic: #cccccc;
 
-        --color-tech-stack: #a9a3b9;
-        --color-tech-stack-span: #f2f0f5;
-        --color-loading: #f2f0f5;
+        --color-tech-stack: #999999;
+        --color-tech-stack-span: #e0e0e0;
+        --color-loading: #e0e0e0;
 
         --color-brand-github: #f2f0f5;
         --color-brand-twitter: #6ea8ff;
@@ -117,4 +117,25 @@ li a:hover {
                 gap: 30px;
         }
 
+}
+
+html[data-theme='light'] {
+        --color-bg: #fdfbfb;
+        --color-text-main: #b85a73;
+        --color-text-primary: #333333;
+        --color-text-muted: #777777;
+        --color-text-hover: #d1648a;
+        --color-border: #e6dce0;
+        --color-bg-alt: #f5f0f2;
+        --color-text-italic: #d1648a;
+
+        --color-tech-stack: #777777;
+        --color-tech-stack-span: #333333;
+        --color-loading: #333333;
+
+        --color-brand-github: #181717;
+        --color-brand-twitter: #1da1f2;
+        --color-brand-linkedin: #0a66c2;
+        --color-brand-telegram: #229ed9;
+        --color-brand-discord: #5865f2;
 }

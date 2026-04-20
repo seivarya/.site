@@ -6,7 +6,12 @@ import Socials from "../components/Socials.astro";
 <Home>
         <section class="profile-section">
                 <div class="name-container">
-                        <p class="author-name">shivang</p>
+                        <a
+                                id="theme-toggle"
+                                class="author-name"
+                                style="text-decoration: none; cursor: pointer;"
+                                title="Toggle Theme">shivang</a
+                        >
                         <a class="author-role" href="/">backend developer</a>
                 </div>
         </section>
@@ -51,6 +56,42 @@ import Socials from "../components/Socials.astro";
         <Socials />
 </Home>
 
+<script is:inline>
+        document.addEventListener("astro:page-load", () => {
+                const themeToggle = document.getElementById("theme-toggle");
+                if (themeToggle) {
+                        themeToggle.addEventListener("click", () => {
+                                const currentTheme =
+                                        document.documentElement.getAttribute(
+                                                "data-theme",
+                                        ) || "dark";
+                                const newTheme =
+                                        currentTheme === "light"
+                                                ? "dark"
+                                                : "light";
+
+                                document.documentElement.setAttribute(
+                                        "data-theme",
+                                        newTheme,
+                                );
+                                localStorage.setItem("theme", newTheme);
+
+                                const metaThemeColor = document.querySelector(
+                                        'meta[name="theme-color"]',
+                                );
+                                if (metaThemeColor) {
+                                        metaThemeColor.setAttribute(
+                                                "content",
+                                                newTheme === "light"
+                                                        ? "#fdfbfb"
+                                                        : "#050505",
+                                        );
+                                }
+                        });
+                }
+        });
+</script>
+
 <style>
         .contact-section {
                 margin-bottom: 40px;
@@ -58,6 +99,9 @@ import Socials from "../components/Socials.astro";
         @media (max-width: 600px) {
                 .contact-section {
                         margin-bottom: 15px;
+                }
+                .tech-stack-section {
+                        font-size: 0.9rem;
                 }
         }
         a {
